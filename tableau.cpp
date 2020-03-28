@@ -81,3 +81,32 @@ void Tableau::Print()
         cout << endl;
     }
 }
+
+void Tableau::up()
+{
+    for (int i=1;i<taille;i++)
+    {
+        for (int j=0;j<taille;j++)
+        {
+            bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
+            int UP = 0;
+            while (test && i-(UP+1)>=0) //test si on a rencontré une case non vide, et si on peut encore remonter d'un cran dans le tableau
+            {
+                if (tab[i-(UP+1)][j]==0)
+                {
+                    UP+=1; //la case est non vide, on peut donc au moins remonter la cas jusque là
+                }
+                else
+                {
+                    test=false; //On a rencontré une case non vide, donc on sort de la boucle
+                }
+            }
+            if (UP !=0)
+            {
+                tab[i-UP][j]=tab[i][j];
+                tab[i][j]=0;
+            }
+        }
+    }
+    CaseAleatoire();
+}

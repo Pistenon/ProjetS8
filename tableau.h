@@ -12,6 +12,7 @@ public:
     ~Tableau(); // destructeur
     void Init(); //Initialise le tableau
     void CaseAleatoire(); //Permet de placer une case 2 aléatoirement dans le tableau
+    void Print(); //Pour faire des tests
     void up();
     void down();
     void left();
@@ -20,7 +21,7 @@ public:
     int PrintScore();
     int PrintMeilleur();
     void NouvellePartie();
-    void Print(); //Pour faire des tests
+
 
 private:
     int **tab;
