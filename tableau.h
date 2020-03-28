@@ -1,6 +1,7 @@
 #ifndef TABLEAU_H
 #define TABLEAU_H
-#include <vector>
+
+#include <iostream>
 using namespace std;
 
 
@@ -19,11 +20,13 @@ public:
     int PrintScore();
     int PrintMeilleur();
     void NouvellePartie();
+    void Print(); //Pour faire des tests
 
 private:
     int **tab;
     int taille ;
     void Free();
+    int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
 };
 
 #endif // TABLEAU_H
