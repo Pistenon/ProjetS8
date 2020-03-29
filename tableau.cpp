@@ -128,7 +128,14 @@ void Tableau::up()
     }
     if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
     {
-        CaseAleatoire();
+        if (Cherche0())
+        {
+            CaseAleatoire();
+        }
+        else
+        {
+            FinPartie();
+        }
     }
 }
 
@@ -178,6 +185,150 @@ void Tableau::down()
     }
     if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
     {
-        CaseAleatoire();
+        if (Cherche0())
+        {
+            CaseAleatoire();
+        }
+        else
+        {
+            FinPartie();
+        }
     }
+}
+
+
+void Tableau::left()
+{
+    bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
+    for (int j=taille-2;j<taille;j++)
+    {
+        for (int i=0;i<taille;i++)
+        {
+            if (tab[i][j]!=0) // On ne décalle pas un 0
+            {
+                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine à gauche ou non, dès que c'est le cas, la boucle while s'arrête
+                int LEFT = 0;
+                while (test && j-(LEFT+1)>-1)
+                {
+                    if (tab[i][j-(LEFT+1)]==0)
+                    {
+                        LEFT+=1;
+                    }
+                    else
+                    {
+                        if (tab[i][j-(LEFT+1)]==tab[i][j])
+                        {
+                            LEFT+=1;
+                        }
+                        test=false; //On a rencontré une case non vide, donc on sort de la boucle
+                    }
+                }
+                if (LEFT !=0)
+                {
+                    Changement=true;
+                    if (tab[i][j-LEFT]==tab[i][j])
+                    {
+                        tab[i][j-LEFT]=2*tab[i][j];
+                        tab[i][j]=0;
+                    }
+                    else
+                    {
+                        tab[i][j-LEFT]=tab[i][j];
+                        tab[i][j]=0;
+                    }
+
+                }
+            }
+        }
+    }
+    if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
+    {
+        if (Cherche0())
+        {
+            CaseAleatoire();
+        }
+        else
+        {
+            FinPartie();
+        }
+    }
+}
+
+void Tableau::right()
+{
+    bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
+    for (int j=1;j>-1;j--)
+    {
+        for (int i=0;i<taille;i++)
+        {
+            if (tab[i][j]!=0) // On ne décalle pas un 0
+            {
+                bool test = true;
+                int RIGHT = 0;
+                while (test && j+(RIGHT+1)>-1)
+                {
+                    if (tab[i][j+(RIGHT+1)]==0)
+                    {
+                        RIGHT+=1;
+                    }
+                    else
+                    {
+                        if (tab[i][j+(RIGHT+1)]==tab[i][j])
+                        {
+                            RIGHT+=1;
+                        }
+                        test=false; //On a rencontré une case non vide, donc on sort de la boucle
+                    }
+                }
+                if (RIGHT !=0)
+                {
+                    Changement=true;
+                    if (tab[i][j+RIGHT]==tab[i][j])
+                    {
+                        tab[i][j+RIGHT]=2*tab[i][j];
+                        tab[i][j]=0;
+                    }
+                    else
+                    {
+                        tab[i][j+RIGHT]=tab[i][j];
+                        tab[i][j]=0;
+                    }
+
+                }
+            }
+        }
+    }
+    if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
+    {
+        if (Cherche0())
+        {
+            CaseAleatoire();
+        }
+        else
+        {
+            FinPartie();
+        }
+    }
+}
+
+
+bool Tableau::Cherche0()
+{
+    for (int i=0;i<taille;i++)
+    {
+        for (int j=0;j<taille;j++)
+        {
+            if (tab[i][j]==0)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void Tableau::FinPartie() // A changer
+{
+    cout <<"Fin de partie" << endl;
+    Print();
 }
