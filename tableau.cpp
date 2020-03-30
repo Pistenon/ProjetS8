@@ -82,6 +82,7 @@ void Tableau::Print()
     }
 }
 
+
 void Tableau::up()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
@@ -115,6 +116,10 @@ void Tableau::up()
                     {
                         tab[i-UP][j]=2*tab[i-UP][j];
                         tab[i][j]=0;
+                        if (tab[i-UP][j]>Score) //Seul moment où le score peut augmenter
+                        {
+                            Score=tab[i-UP][j];
+                        }
                     }
                     else
                     {
@@ -136,6 +141,10 @@ void Tableau::up()
         {
             FinPartie();
         }
+    }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
     }
 }
 
@@ -172,6 +181,10 @@ void Tableau::down()
                     {
                         tab[i+DOWN][j]=2*tab[i+DOWN][j];
                         tab[i][j]=0;
+                        if (tab[i+DOWN][j]>Score) //Seul moment où le score peut augmenter
+                        {
+                            Score=tab[i+DOWN][j];
+                        }
                     }
                     else
                     {
@@ -194,8 +207,11 @@ void Tableau::down()
             FinPartie();
         }
     }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
 }
-
 
 void Tableau::left()
 {
@@ -230,6 +246,10 @@ void Tableau::left()
                     {
                         tab[i][j-LEFT]=2*tab[i][j];
                         tab[i][j]=0;
+                        if (tab[i][j-LEFT]>Score) //Seul moment où le score peut augmenter
+                        {
+                            Score=tab[i][j-LEFT];
+                        }
                     }
                     else
                     {
@@ -251,6 +271,10 @@ void Tableau::left()
         {
             FinPartie();
         }
+    }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
     }
 }
 
@@ -287,6 +311,10 @@ void Tableau::right()
                     {
                         tab[i][j+RIGHT]=2*tab[i][j];
                         tab[i][j]=0;
+                        if (tab[i][j+RIGHT]>Score) //Seul moment où le score peut augmenter
+                        {
+                            Score=tab[i][j+RIGHT];
+                        }
                     }
                     else
                     {
@@ -309,8 +337,11 @@ void Tableau::right()
             FinPartie();
         }
     }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
 }
-
 
 bool Tableau::Cherche0()
 {
@@ -331,4 +362,14 @@ void Tableau::FinPartie() // A changer
 {
     cout <<"Fin de partie" << endl;
     Print();
+}
+
+int Tableau::PrintScore()
+{
+    return Score;
+}
+
+int Tableau::PrintMeilleur()
+{
+    return MeilleurScore;
 }

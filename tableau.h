@@ -26,6 +26,8 @@ public:
 private:
     int **tab;
     int taille ;
+    int Score;
+    int MeilleurScore;
     void Free();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
     bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
