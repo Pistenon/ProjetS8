@@ -373,3 +373,14 @@ int Tableau::PrintMeilleur()
 {
     return MeilleurScore;
 }
+
+void Tableau::NouvellePartie()
+{
+    Free();
+    Init();
+
+    CaseAleatoire();
+    CaseAleatoire();
+    Score=2;
+}
+

@@ -20,7 +20,7 @@ public:
     void FinPartie();
     int PrintScore();
     int PrintMeilleur();
-    void NouvellePartie();
+    void NouvellePartie(); //L'appel à cette méthode crée une nouvelle partie
 
 
 private:
