@@ -13,10 +13,10 @@ public:
     void Init(); //Initialise le tableau
     vector<int> CaseAleatoire(); //Permet de placer une case 2 aléatoirement dans le tableau
     void Print(); //Pour faire des tests
-    void up();
-    void down();
-    void left();
-    void right();
+    vector<vector<int>> up(); //Permet de faire le mouvement vers le haut; renvoie les modifications du tableau
+    vector<vector<int>> down();
+    vector<vector<int>> left();
+    vector<vector<int>> right();
     void FinPartie();
     int PrintScore();
     int PrintMeilleur();

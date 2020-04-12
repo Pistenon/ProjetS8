@@ -87,9 +87,11 @@ void Tableau::Print()
 }
 
 
-void Tableau::up()
+
+vector<vector<int>> Tableau::up()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
+    vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     for (int i=1;i<taille;i++)
     {
         for (int j=0;j<taille;j++)
@@ -120,6 +122,13 @@ void Tableau::up()
                     {
                         tab[i-UP][j]=2*tab[i-UP][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i-UP;
+                        CHANGEMENT[s-1][3]=j;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j;
+                        CHANGEMENT[s-1][4]=tab[i-UP][j];
                         if (tab[i-UP][j]>Score) //Seul moment où le score peut augmenter
                         {
                             Score=tab[i-UP][j];
@@ -129,6 +138,13 @@ void Tableau::up()
                     {
                         tab[i-UP][j]=tab[i][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i-UP;
+                        CHANGEMENT[s-1][3]=j;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j;
+                        CHANGEMENT[s-1][4]=tab[i-UP][j];
                     }
 
                 }
@@ -139,22 +155,40 @@ void Tableau::up()
     {
         if (Cherche0())
         {
-            CaseAleatoire();
+            vector<int> PosCaseAlea;
+            PosCaseAlea=CaseAleatoire();
+            CHANGEMENT.push_back(vector<int>(2));
+            int s=CHANGEMENT.size();
+            CHANGEMENT[s-1][0]=PosCaseAlea[0];
+            CHANGEMENT[s-1][1]=PosCaseAlea[1];
         }
         else
         {
-            FinPartie();
+            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
         }
     }
+    else
+        {
+            if (Cherche0())
+            {
+                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
+            }
+            else {
+                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+            }
+        }
     if (Score>MeilleurScore)
     {
         MeilleurScore=Score;
     }
+    return CHANGEMENT;
 }
 
-void Tableau::down()
+
+vector<vector<int>> Tableau::down()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
+    vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     for (int i=taille-2;i>-1;i--)
     {
         for (int j=0;j<taille;j++)
@@ -185,6 +219,13 @@ void Tableau::down()
                     {
                         tab[i+DOWN][j]=2*tab[i+DOWN][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i+DOWN;
+                        CHANGEMENT[s-1][3]=j;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j;
+                        CHANGEMENT[s-1][4]=tab[i+DOWN][j];
                         if (tab[i+DOWN][j]>Score) //Seul moment où le score peut augmenter
                         {
                             Score=tab[i+DOWN][j];
@@ -194,6 +235,13 @@ void Tableau::down()
                     {
                         tab[i+DOWN][j]=tab[i][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i+DOWN;
+                        CHANGEMENT[s-1][3]=j;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j;
+                        CHANGEMENT[s-1][4]=tab[i+DOWN][j];
                     }
 
                 }
@@ -204,22 +252,39 @@ void Tableau::down()
     {
         if (Cherche0())
         {
-            CaseAleatoire();
+            vector<int> PosCaseAlea;
+            PosCaseAlea=CaseAleatoire();
+            CHANGEMENT.push_back(vector<int>(2));
+            int s=CHANGEMENT.size();
+            CHANGEMENT[s-1][0]=PosCaseAlea[0];
+            CHANGEMENT[s-1][1]=PosCaseAlea[1];
         }
         else
         {
-            FinPartie();
+            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
         }
     }
+    else
+        {
+            if (Cherche0())
+            {
+                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
+            }
+            else {
+                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+            }
+        }
     if (Score>MeilleurScore)
     {
         MeilleurScore=Score;
     }
+    return CHANGEMENT;
 }
 
-void Tableau::left()
+vector<vector<int>> Tableau::left()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
+    vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     for (int j=taille-2;j<taille;j++)
     {
         for (int i=0;i<taille;i++)
@@ -250,6 +315,13 @@ void Tableau::left()
                     {
                         tab[i][j-LEFT]=2*tab[i][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i;
+                        CHANGEMENT[s-1][3]=j-LEFT;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j;
+                        CHANGEMENT[s-1][4]=tab[i][j-LEFT];
                         if (tab[i][j-LEFT]>Score) //Seul moment où le score peut augmenter
                         {
                             Score=tab[i][j-LEFT];
@@ -259,6 +331,13 @@ void Tableau::left()
                     {
                         tab[i][j-LEFT]=tab[i][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i;
+                        CHANGEMENT[s-1][3]=j-LEFT;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j;
+                        CHANGEMENT[s-1][4]=tab[i][j-LEFT];
                     }
 
                 }
@@ -269,22 +348,39 @@ void Tableau::left()
     {
         if (Cherche0())
         {
-            CaseAleatoire();
+            vector<int> PosCaseAlea;
+            PosCaseAlea=CaseAleatoire();
+            CHANGEMENT.push_back(vector<int>(2));
+            int s=CHANGEMENT.size();
+            CHANGEMENT[s-1][0]=PosCaseAlea[0];
+            CHANGEMENT[s-1][1]=PosCaseAlea[1];
         }
         else
         {
-            FinPartie();
+            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
         }
     }
+    else
+        {
+            if (Cherche0())
+            {
+                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
+            }
+            else {
+                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+            }
+        }
     if (Score>MeilleurScore)
     {
         MeilleurScore=Score;
     }
+    return CHANGEMENT;
 }
 
-void Tableau::right()
+vector<vector<int>> Tableau::right()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
+    vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     for (int j=1;j>-1;j--)
     {
         for (int i=0;i<taille;i++)
@@ -315,6 +411,13 @@ void Tableau::right()
                     {
                         tab[i][j+RIGHT]=2*tab[i][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i;
+                        CHANGEMENT[s-1][3]=j+RIGHT;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j+RIGHT;
+                        CHANGEMENT[s-1][4]=tab[i][j+RIGHT];
                         if (tab[i][j+RIGHT]>Score) //Seul moment où le score peut augmenter
                         {
                             Score=tab[i][j+RIGHT];
@@ -324,6 +427,13 @@ void Tableau::right()
                     {
                         tab[i][j+RIGHT]=tab[i][j];
                         tab[i][j]=0;
+                        CHANGEMENT.push_back(vector<int>(5));
+                        int s=CHANGEMENT.size();
+                        CHANGEMENT[s-1][2]=i;
+                        CHANGEMENT[s-1][3]=j+RIGHT;
+                        CHANGEMENT[s-1][0]=i;
+                        CHANGEMENT[s-1][1]=j+RIGHT;
+                        CHANGEMENT[s-1][4]=tab[i][j+RIGHT];
                     }
 
                 }
@@ -334,32 +444,33 @@ void Tableau::right()
     {
         if (Cherche0())
         {
-            CaseAleatoire();
+            vector<int> PosCaseAlea;
+            PosCaseAlea=CaseAleatoire();
+            CHANGEMENT.push_back(vector<int>(2));
+            int s=CHANGEMENT.size();
+            CHANGEMENT[s-1][0]=PosCaseAlea[0];
+            CHANGEMENT[s-1][1]=PosCaseAlea[1];
         }
         else
         {
-            FinPartie();
+            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
         }
     }
+    else
+        {
+            if (Cherche0())
+            {
+                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
+            }
+            else {
+                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+            }
+        }
     if (Score>MeilleurScore)
     {
         MeilleurScore=Score;
     }
-}
-
-bool Tableau::Cherche0()
-{
-    for (int i=0;i<taille;i++)
-    {
-        for (int j=0;j<taille;j++)
-        {
-            if (tab[i][j]==0)
-            {
-                return true;
-            }
-        }
-    }
-    return false;
+    return CHANGEMENT;
 }
 
 void Tableau::FinPartie() // A changer
