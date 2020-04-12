@@ -43,11 +43,12 @@ void Tableau::Init()
     }
 }
 
-void Tableau::CaseAleatoire()
+vector<int> Tableau::CaseAleatoire()
 {
     // On suppose dans cette fonction qu'il y a au moins une case de libre dans le tableau (le test a été effectué avant l'appel de cette fonction)
     int Nombre1 = NbreAlea();
     int Nombre2 = NbreAlea();
+    vector<int> Position;
     bool test = true;
     while (test)
     {
@@ -55,6 +56,8 @@ void Tableau::CaseAleatoire()
         {
             test=false;
             tab[Nombre1][Nombre2]=2;
+            Position.push_back(Nombre1);
+            Position.push_back(Nombre2);
         }
         else
         {
@@ -62,6 +65,7 @@ void Tableau::CaseAleatoire()
             Nombre2=NbreAlea();
         }
     }
+    return Position;
 }
 
 int Tableau::NbreAlea()

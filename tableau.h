@@ -3,7 +3,7 @@
 
 #include <iostream>
 using namespace std;
-
+#include <vector>
 
 class Tableau
 {
@@ -11,7 +11,7 @@ public:
     Tableau();
     ~Tableau(); // destructeur
     void Init(); //Initialise le tableau
-    void CaseAleatoire(); //Permet de placer une case 2 aléatoirement dans le tableau
+    vector<int> CaseAleatoire(); //Permet de placer une case 2 aléatoirement dans le tableau
     void Print(); //Pour faire des tests
     void up();
     void down();
