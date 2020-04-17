@@ -499,3 +499,18 @@ void Tableau::NouvellePartie()
     Score=2;
 }
 
+bool Tableau::Cherche0()
+{
+    for (int i=0;i<taille;i++)
+    {
+        for (int j=0;j<taille;j++)
+        {
+            if (tab[i][j]==0)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
