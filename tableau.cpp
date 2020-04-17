@@ -499,6 +499,7 @@ void Tableau::NouvellePartie()
     Score=2;
 }
 
+
 bool Tableau::Cherche0()
 {
     for (int i=0;i<taille;i++)
