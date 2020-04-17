@@ -7,7 +7,7 @@ Window {
     visible: true
     width: 600
     height: 600
-    color: "#ffffff"
+    color: "#faf8ef"
     title: qsTr("2048")
 
     Rectangle {
@@ -16,24 +16,7 @@ Window {
         y: 100
         width: 400
         height: 400
-        color: "#b9b7c4"
-        Keys.onPressed: {
-            switch (event.key) {
-                case Qt.Key_Up:
-                    jeu.move_up();
-                    break;
-                case Qt.Key_Down:
-                    jeu.move_down();
-                    break;
-                case Qt.Key_Left:
-                    jeu.move_left();
-                    break;
-                case Qt.Key_Right:
-                    jeu.move_right();
-                    break;
-            }
-        }
-
+        color: "#b9ada1"
 
 
         Rectangle {
@@ -42,7 +25,7 @@ Window {
             y: 10
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
 
             Text {
@@ -53,7 +36,53 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case00
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte00.text){
+                        case "":
+                            zone00.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone00.color="#ede4db";
+                            break;
+                        case "4":
+                            zone00.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone00.color="#e9b280";
+                            break;
+                        case "16":
+                            zone00.color="#f59563";
+                            break;
+                        case "32":
+                            zone00.color="#e68469";
+                            break;
+                        case "64":
+                            zone00.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone00.color="#eacc79";
+                            break;
+                        case "256":
+                            zone00.color="#ecc961";
+                            break;
+                        case "512":
+                            zone00.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone00.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone00.color="#e7bf433";
+                            break;
+                        default:
+                            zone00.color="#cac0b4";
+                            break;
+                    }
+                }
             }
+
+
+
         }
 
         Rectangle {
@@ -62,7 +91,7 @@ Window {
             y: 10
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte01
@@ -72,6 +101,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case01
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte01.text){
+                        case "":
+                            zone01.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone01.color="#ede4db";
+                            break;
+                        case "4":
+                            zone01.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone01.color="#e9b280";
+                            break;
+                        case "16":
+                            zone01.color="#f59563";
+                            break;
+                        case "32":
+                            zone01.color="#e68469";
+                            break;
+                        case "64":
+                            zone01.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone01.color="#eacc79";
+                            break;
+                        case "256":
+                            zone01.color="#ecc961";
+                            break;
+                        case "512":
+                            zone01.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone01.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone01.color="#e7bf433";
+                            break;
+                        default:
+                            zone01.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -81,7 +153,7 @@ Window {
             y: 10
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte02
@@ -91,6 +163,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case02
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte02.text){
+                        case "":
+                            zone02.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone02.color="#ede4db";
+                            break;
+                        case "4":
+                            zone02.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone02.color="#e9b280";
+                            break;
+                        case "16":
+                            zone02.color="#f59563";
+                            break;
+                        case "32":
+                            zone02.color="#e68469";
+                            break;
+                        case "64":
+                            zone02.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone02.color="#eacc79";
+                            break;
+                        case "256":
+                            zone02.color="#ecc961";
+                            break;
+                        case "512":
+                            zone02.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone02.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone02.color="#e7bf433";
+                            break;
+                        default:
+                            zone02.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -100,7 +215,7 @@ Window {
             y: 10
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte03
@@ -110,6 +225,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case03
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte03.text){
+                        case "":
+                            zone03.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone03.color="#ede4db";
+                            break;
+                        case "4":
+                            zone03.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone03.color="#e9b280";
+                            break;
+                        case "16":
+                            zone03.color="#f59563";
+                            break;
+                        case "32":
+                            zone03.color="#e68469";
+                            break;
+                        case "64":
+                            zone03.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone03.color="#eacc79";
+                            break;
+                        case "256":
+                            zone03.color="#ecc961";
+                            break;
+                        case "512":
+                            zone03.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone03.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone03.color="#e7bf433";
+                            break;
+                        default:
+                            zone03.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -119,7 +277,7 @@ Window {
             y: 110
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte10
@@ -129,6 +287,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case10
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte10.text){
+                        case "":
+                            zone10.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone10.color="#ede4db";
+                            break;
+                        case "4":
+                            zone10.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone10.color="#e9b280";
+                            break;
+                        case "16":
+                            zone10.color="#f59563";
+                            break;
+                        case "32":
+                            zone10.color="#e68469";
+                            break;
+                        case "64":
+                            zone10.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone10.color="#eacc79";
+                            break;
+                        case "256":
+                            zone10.color="#ecc961";
+                            break;
+                        case "512":
+                            zone10.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone10.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone10.color="#e7bf433";
+                            break;
+                        default:
+                            zone10.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -138,7 +339,7 @@ Window {
             y: 110
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte11
@@ -148,6 +349,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case11
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte11.text){
+                        case "":
+                            zone11.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone11.color="#ede4db";
+                            break;
+                        case "4":
+                            zone11.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone11.color="#e9b280";
+                            break;
+                        case "16":
+                            zone11.color="#f59563";
+                            break;
+                        case "32":
+                            zone11.color="#e68469";
+                            break;
+                        case "64":
+                            zone11.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone11.color="#eacc79";
+                            break;
+                        case "256":
+                            zone11.color="#ecc961";
+                            break;
+                        case "512":
+                            zone11.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone11.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone11.color="#e7bf433";
+                            break;
+                        default:
+                            zone11.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -157,7 +401,7 @@ Window {
             y: 110
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte12
@@ -167,6 +411,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case12
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte12.text){
+                        case "":
+                            zone12.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone12.color="#ede4db";
+                            break;
+                        case "4":
+                            zone12.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone12.color="#e9b280";
+                            break;
+                        case "16":
+                            zone12.color="#f59563";
+                            break;
+                        case "32":
+                            zone12.color="#e68469";
+                            break;
+                        case "64":
+                            zone12.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone12.color="#eacc79";
+                            break;
+                        case "256":
+                            zone12.color="#ecc961";
+                            break;
+                        case "512":
+                            zone12.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone12.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone12.color="#e7bf433";
+                            break;
+                        default:
+                            zone12.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -176,7 +463,7 @@ Window {
             y: 110
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte13
@@ -186,6 +473,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case13
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte13.text){
+                        case "":
+                            zone13.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone13.color="#ede4db";
+                            break;
+                        case "4":
+                            zone13.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone13.color="#e9b280";
+                            break;
+                        case "16":
+                            zone13.color="#f59563";
+                            break;
+                        case "32":
+                            zone13.color="#e68469";
+                            break;
+                        case "64":
+                            zone13.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone13.color="#eacc79";
+                            break;
+                        case "256":
+                            zone13.color="#ecc961";
+                            break;
+                        case "512":
+                            zone13.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone13.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone13.color="#e7bf433";
+                            break;
+                        default:
+                            zone13.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -195,7 +525,7 @@ Window {
             y: 210
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte20
@@ -205,6 +535,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case20
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte20.text){
+                        case "":
+                            zone20.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone20.color="#ede4db";
+                            break;
+                        case "4":
+                            zone20.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone20.color="#e9b280";
+                            break;
+                        case "16":
+                            zone20.color="#f59563";
+                            break;
+                        case "32":
+                            zone20.color="#e68469";
+                            break;
+                        case "64":
+                            zone20.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone20.color="#eacc79";
+                            break;
+                        case "256":
+                            zone20.color="#ecc961";
+                            break;
+                        case "512":
+                            zone20.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone20.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone20.color="#e7bf433";
+                            break;
+                        default:
+                            zone20.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -214,7 +587,7 @@ Window {
             y: 210
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte21
@@ -224,6 +597,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case21
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte21.text){
+                        case "":
+                            zone21.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone21.color="#ede4db";
+                            break;
+                        case "4":
+                            zone21.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone21.color="#e9b280";
+                            break;
+                        case "16":
+                            zone21.color="#f59563";
+                            break;
+                        case "32":
+                            zone21.color="#e68469";
+                            break;
+                        case "64":
+                            zone21.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone21.color="#eacc79";
+                            break;
+                        case "256":
+                            zone21.color="#ecc961";
+                            break;
+                        case "512":
+                            zone21.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone21.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone21.color="#e7bf433";
+                            break;
+                        default:
+                            zone21.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -233,7 +649,7 @@ Window {
             y: 210
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte22
@@ -243,6 +659,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case22
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte22.text){
+                        case "":
+                            zone22.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone22.color="#ede4db";
+                            break;
+                        case "4":
+                            zone22.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone22.color="#e9b280";
+                            break;
+                        case "16":
+                            zone22.color="#f59563";
+                            break;
+                        case "32":
+                            zone22.color="#e68469";
+                            break;
+                        case "64":
+                            zone22.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone22.color="#eacc79";
+                            break;
+                        case "256":
+                            zone22.color="#ecc961";
+                            break;
+                        case "512":
+                            zone22.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone22.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone22.color="#e7bf433";
+                            break;
+                        default:
+                            zone22.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -252,7 +711,7 @@ Window {
             y: 210
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte23
@@ -262,6 +721,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case23
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte23.text){
+                        case "":
+                            zone23.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone23.color="#ede4db";
+                            break;
+                        case "4":
+                            zone23.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone23.color="#e9b280";
+                            break;
+                        case "16":
+                            zone23.color="#f59563";
+                            break;
+                        case "32":
+                            zone23.color="#e68469";
+                            break;
+                        case "64":
+                            zone23.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone23.color="#eacc79";
+                            break;
+                        case "256":
+                            zone23.color="#ecc961";
+                            break;
+                        case "512":
+                            zone23.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone23.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone23.color="#e7bf433";
+                            break;
+                        default:
+                            zone23.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -271,7 +773,7 @@ Window {
             y: 310
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte30
@@ -281,6 +783,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case30
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte30.text){
+                        case "":
+                            zone30.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone30.color="#ede4db";
+                            break;
+                        case "4":
+                            zone30.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone30.color="#e9b280";
+                            break;
+                        case "16":
+                            zone30.color="#f59563";
+                            break;
+                        case "32":
+                            zone30.color="#e68469";
+                            break;
+                        case "64":
+                            zone30.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone30.color="#eacc79";
+                            break;
+                        case "256":
+                            zone30.color="#ecc961";
+                            break;
+                        case "512":
+                            zone30.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone30.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone30.color="#e7bf433";
+                            break;
+                        default:
+                            zone30.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -290,7 +835,7 @@ Window {
             y: 310
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte31
@@ -300,6 +845,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case31
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte31.text){
+                        case "":
+                            zone31.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone31.color="#ede4db";
+                            break;
+                        case "4":
+                            zone31.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone31.color="#e9b280";
+                            break;
+                        case "16":
+                            zone31.color="#f59563";
+                            break;
+                        case "32":
+                            zone31.color="#e68469";
+                            break;
+                        case "64":
+                            zone31.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone31.color="#eacc79";
+                            break;
+                        case "256":
+                            zone31.color="#ecc961";
+                            break;
+                        case "512":
+                            zone31.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone31.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone31.color="#e7bf433";
+                            break;
+                        default:
+                            zone31.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -309,7 +897,7 @@ Window {
             y: 310
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte32
@@ -319,6 +907,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case32
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte32.text){
+                        case "":
+                            zone32.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone32.color="#ede4db";
+                            break;
+                        case "4":
+                            zone32.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone32.color="#e9b280";
+                            break;
+                        case "16":
+                            zone32.color="#f59563";
+                            break;
+                        case "32":
+                            zone32.color="#e68469";
+                            break;
+                        case "64":
+                            zone32.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone32.color="#eacc79";
+                            break;
+                        case "256":
+                            zone32.color="#ecc961";
+                            break;
+                        case "512":
+                            zone32.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone32.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone32.color="#e7bf433";
+                            break;
+                        default:
+                            zone32.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
 
@@ -328,7 +959,7 @@ Window {
             y: 310
             width:80
             height:80
-            color:"#e6e08c"
+            color:"#cac0b4"
 
             Text {
                 id: texte33
@@ -338,6 +969,49 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: 40
                 text: jeu.case33
+                onTextChanged: { //Changement de couleurs pour une cases
+                    switch(texte33.text){
+                        case "":
+                            zone33.color="#cac0b4";
+                            break;
+                        case "2":
+                            zone33.color="#ede4db";
+                            break;
+                        case "4":
+                            zone33.color="#ebdfc9";
+                            break;
+                        case "8":
+                            zone33.color="#e9b280";
+                            break;
+                        case "16":
+                            zone33.color="#f59563";
+                            break;
+                        case "32":
+                            zone33.color="#e68469";
+                            break;
+                        case "64":
+                            zone33.color="#e46b4c";
+                            break;
+                        case "128":
+                            zone33.color="#eacc79";
+                            break;
+                        case "256":
+                            zone33.color="#ecc961";
+                            break;
+                        case "512":
+                            zone33.color="#e9c55b";
+                            break;
+                        case "1024":
+                            zone33.color="#ecc440";
+                            break;
+                        case "2048":
+                            zone33.color="#e7bf433";
+                            break;
+                        default:
+                            zone33.color="#cac0b4";
+                            break;
+                    }
+                }
             }
         }
     }
