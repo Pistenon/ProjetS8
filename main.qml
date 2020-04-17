@@ -16,100 +16,308 @@ Window {
         height: 400
         color: "#b9b7c4"
 
-        Case {
+        Rectangle {
             id: zone00
             x: 10
             y: 10
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte00
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case00
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone01
             x: 110
             y: 10
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte01
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case01
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone02
             x: 210
             y: 10
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte02
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case02
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone03
             x: 310
             y: 10
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte03
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case03
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone10
             x: 10
             y: 110
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte10
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case10
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone11
             x: 110
             y: 110
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte11
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case11
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone12
             x: 210
             y: 110
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte12
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case12
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone13
             x: 310
             y: 110
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte13
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case13
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone20
             x: 10
             y: 210
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte20
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case20
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone21
             x: 110
             y: 210
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte21
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case21
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone22
             x: 210
             y: 210
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte22
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case22
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone23
             x: 310
             y: 210
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte23
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case23
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone30
             x: 10
             y: 310
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte30
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case30
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone31
             x: 110
             y: 310
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte31
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case31
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone32
             x: 210
             y: 310
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte32
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case32
+            }
         }
 
-        Case {
+        Rectangle {
             id: zone33
             x: 310
             y: 310
+            width:80
+            height:80
+            color:"#e6e08c"
+
+            Text {
+                id: texte33
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 40
+                text: jeu.case33
+            }
         }
     }
 
@@ -142,8 +350,7 @@ Window {
             y: 0
             width: 200
             height: 50
-            acceptedButtons: Qt.LeftButton | Qt.RightButton
-            onClicked: {}
+            onClicked: jeu.nouvellePartie()
         }
     }
 }
