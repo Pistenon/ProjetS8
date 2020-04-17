@@ -5,6 +5,8 @@
 #include <QString>
 #include <vector>
 #include <fstream>
+#include <iostream>
+using namespace std;
 
 class Jeu : public QObject
 {
@@ -48,11 +50,19 @@ public:
     QString readCase32();
     QString readCase33();
 
-    Q_INVOKABLE void CaseAleatoire();
+    Q_INVOKABLE void caseAleatoire();
     Q_INVOKABLE void nouvellePartie();
     Q_INVOKABLE int get_case(int x, int y);
+    Q_INVOKABLE void move_up();
+    Q_INVOKABLE void move_down();
+    Q_INVOKABLE void move_left();
+    Q_INVOKABLE void move_right();
 
     void Init();
+    vector<vector<int>> up();
+    vector<vector<int>> down();
+    vector<vector<int>> left();
+    vector<vector<int>> right();
 
 signals:
     void caseChanged();
@@ -64,6 +74,7 @@ private:
     int MeilleurScore;
     void Free();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
+    bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
 };
 
 #endif // JEU_H
