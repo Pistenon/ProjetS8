@@ -1,4 +1,11 @@
 #include "jeu.h"
+#include <random>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
 
 Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
 {
@@ -6,7 +13,6 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     taille = tailletableau;
 
     Init();
-
 
     CaseAleatoire();
     CaseAleatoire();
@@ -94,112 +100,112 @@ int Jeu::get_case(int x,int y)
 
 QString Jeu::readCase00()
 {
-    if(get_case(1,1)!=0)
+    if(get_case(0,0)!=0)
         return QString::number(get_case(0,0));
     else
         return QString("");
 }
 QString Jeu::readCase01()
 {
-    if(get_case(1,2)!=0)
+    if(get_case(0,1)!=0)
         return QString::number(get_case(0,1));
     else
         return QString("");
 }
 QString Jeu::readCase02()
 {
-    if(get_case(1,3)!=0)
+    if(get_case(0,2)!=0)
         return QString::number(get_case(0,2));
     else
         return QString("");
 }
 QString Jeu::readCase03()
 {
-    if(get_case(1,4)!=0)
+    if(get_case(0,3)!=0)
         return QString::number(get_case(0,3));
     else
         return QString("");
 }
 QString Jeu::readCase10()
 {
-    if(get_case(2,1)!=0)
+    if(get_case(1,0)!=0)
         return QString::number(get_case(1,0));
     else
         return QString("");
 }
 QString Jeu::readCase11()
 {
-    if(get_case(2,2)!=0)
+    if(get_case(1,1)!=0)
         return QString::number(get_case(1,1));
     else
         return QString("");
 }
 QString Jeu::readCase12()
 {
-    if(get_case(2,3)!=0)
+    if(get_case(1,2)!=0)
         return QString::number(get_case(1,2));
     else
         return QString("");
 }
 QString Jeu::readCase13()
 {
-    if(get_case(2,4)!=0)
+    if(get_case(1,3)!=0)
         return QString::number(get_case(1,3));
     else
         return QString("");
 }
 QString Jeu::readCase20()
 {
-    if(get_case(3,1)!=0)
+    if(get_case(2,0)!=0)
         return QString::number(get_case(2,0));
     else
         return QString("");
 }
 QString Jeu::readCase21()
 {
-    if(get_case(3,2)!=0)
+    if(get_case(2,1)!=0)
         return QString::number(get_case(2,1));
     else
         return QString("");
 }
 QString Jeu::readCase22()
 {
-    if(get_case(3,3)!=0)
+    if(get_case(2,2)!=0)
         return QString::number(get_case(2,2));
     else
         return QString("");
 }
 QString Jeu::readCase23()
 {
-    if(get_case(3,4)!=0)
+    if(get_case(2,3)!=0)
         return QString::number(get_case(2,3));
     else
         return QString("");
 }
 QString Jeu::readCase30()
 {
-    if(get_case(4,1)!=0)
+    if(get_case(3,0)!=0)
         return QString::number(get_case(3,0));
     else
         return QString("");
 }
 QString Jeu::readCase31()
 {
-    if(get_case(4,2)!=0)
+    if(get_case(3,1)!=0)
         return QString::number(get_case(3,1));
     else
         return QString("");
 }
 QString Jeu::readCase32()
 {
-    if(get_case(4,3)!=0)
+    if(get_case(3,2)!=0)
         return QString::number(get_case(3,2));
     else
         return QString("");
 }
 QString Jeu::readCase33()
 {
-    if(get_case(4,4)!=0)
+    if(get_case(3,3)!=0)
         return QString::number(get_case(3,3));
     else
         return QString("");
