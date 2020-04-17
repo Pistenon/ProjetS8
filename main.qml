@@ -1,5 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
+import QtQuick.Controls 2.3
+import QtQuick.Dialogs 1.2
 
 Window {
     visible: true
@@ -15,6 +17,24 @@ Window {
         width: 400
         height: 400
         color: "#b9b7c4"
+        Keys.onPressed: {
+            switch (event.key) {
+                case Qt.Key_Up:
+                    jeu.move_up();
+                    break;
+                case Qt.Key_Down:
+                    jeu.move_down();
+                    break;
+                case Qt.Key_Left:
+                    jeu.move_left();
+                    break;
+                case Qt.Key_Right:
+                    jeu.move_right();
+                    break;
+            }
+        }
+
+
 
         Rectangle {
             id: zone00
@@ -23,6 +43,7 @@ Window {
             width:80
             height:80
             color:"#e6e08c"
+
 
             Text {
                 id: texte00
@@ -329,6 +350,23 @@ Window {
         height: 50
         color: "#b8b8b2"
         focus: true
+        Keys.onPressed: {
+            switch (event.key) {
+                case Qt.Key_Up:
+                    jeu.move_up();
+                    break;
+                case Qt.Key_Down:
+                    jeu.move_down();
+                    break;
+                case Qt.Key_Left:
+                    jeu.move_left();
+                    break;
+                case Qt.Key_Right:
+                    jeu.move_right();
+                    break;
+            }
+        }
+
 
         TextInput {
             id: nouvellePartie
@@ -342,6 +380,7 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             font.family: "Verdana"
             font.pixelSize: 25
+
         }
 
         MouseArea {
