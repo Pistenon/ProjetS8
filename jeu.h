@@ -84,6 +84,7 @@ private:
     int Score;
     int MeilleurScore;
     vector<int**> historique; // Répertorie tous les coups joues
+    bool echec; //Indique que la partie est perdue
     void Free();
     void FreeHistorique();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
