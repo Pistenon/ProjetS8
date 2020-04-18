@@ -15,6 +15,7 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     taille = tailletableau;
     Score = 0;
     MeilleurScore=0;
+    echec=false;
 
     Init();
 
@@ -77,7 +78,7 @@ void Jeu::caseAleatoire()
             int n = rand()%4;
             if (n>=1)
             {
-                tab[Nombre1][Nombre2]=1024;
+                tab[Nombre1][Nombre2]=2;
                 Score += 2;
             }
             else
@@ -274,6 +275,7 @@ vector<vector<int>> Jeu::up()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+            echec=true;
         }
     }
     else
@@ -284,6 +286,7 @@ vector<vector<int>> Jeu::up()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+                echec=true;
             }
         }
     return CHANGEMENT;
@@ -363,6 +366,7 @@ vector<vector<int>> Jeu::down()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+            echec=true;
         }
     }
     else
@@ -373,6 +377,7 @@ vector<vector<int>> Jeu::down()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+                echec=true;
             }
         }
     return CHANGEMENT;
@@ -450,6 +455,7 @@ vector<vector<int>> Jeu::left()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+            echec=true;
         }
     }
     else
@@ -460,6 +466,7 @@ vector<vector<int>> Jeu::left()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+                echec=true;
             }
         }
     return CHANGEMENT;
@@ -537,6 +544,7 @@ vector<vector<int>> Jeu::right()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+            echec=true;
         }
     }
     else
@@ -547,6 +555,7 @@ vector<vector<int>> Jeu::right()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
+                echec=true;
             }
         }
     return CHANGEMENT;
@@ -583,6 +592,7 @@ void Jeu::move_up()
     add_historique();
     caseChanged();
     scoreChanged();
+    endChanged();
 }
 
 void Jeu::move_down()
@@ -613,6 +623,7 @@ void Jeu::move_down()
     add_historique();
     caseChanged();
     scoreChanged();
+    endChanged();
 }
 
 void Jeu::move_left()
@@ -643,6 +654,7 @@ void Jeu::move_left()
     add_historique();
     caseChanged();
     scoreChanged();
+    endChanged();
 }
 
 void Jeu::move_right()
@@ -673,6 +685,7 @@ void Jeu::move_right()
     add_historique();
     caseChanged();
     scoreChanged();
+    endChanged();
 }
 
 
@@ -833,7 +846,10 @@ QString Jeu::readEnd()
     if (Victoire())
         return QString("You win !");
     else
-        return QString("");
+        if(echec)
+            return QString("Game Over");
+        else
+            return QString("");
 
 }
 
