@@ -158,17 +158,26 @@ void Jeu::cancel()
     int T = historique.size();
     if (T>1)
     {
-    for (int i = 0 ; i < taille ; i++)
-        for (int j = 0 ; j < taille ; j++)
-            tab[i][j] = historique[T-2][i][j];
+        int nouveauscore=0;
+        for (int i = 0 ; i < taille ; i++)
+        {
+            for (int j = 0 ; j < taille ; j++)
+            {
+                tab[i][j] = historique[T-2][i][j];
+                nouveauscore+=tab[i][j];
+            }
+         }
     /*
     for (int i=0;i<taille;i++)
         delete [] historique[T-1][i];
     delete [] historique[T-1];
     */
     historique.pop_back();
+    Score=nouveauscore;
+
     }
     caseChanged();
+    scoreChanged();
 }
 
 
