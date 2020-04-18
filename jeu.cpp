@@ -72,8 +72,17 @@ void Jeu::caseAleatoire()
         if (tab[Nombre1][Nombre2]==0)
         {
             test=false;
-            tab[Nombre1][Nombre2]=2;
-            Score += 2;
+            int n = rand()%4;
+            if (n>=1)
+            {
+                tab[Nombre1][Nombre2]=2;
+                Score += 2;
+            }
+            else
+            {
+                tab[Nombre1][Nombre2]=4;
+                Score += 4;
+            }
         }
         else
         {
