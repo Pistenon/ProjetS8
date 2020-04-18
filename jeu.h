@@ -76,6 +76,7 @@ public:
     int Reconstruire();
     void StockerScore();
     void DestockerScore();
+    void RemiseZeroSauvegardes();
 
 signals:
     void caseChanged();

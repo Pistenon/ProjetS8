@@ -29,6 +29,8 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     else
     {
         DestockerScore();
+        RemiseZeroSauvegardes();
+        MeilleurScore=Score;
     }
     add_historique();
 
@@ -976,4 +978,14 @@ void Jeu::DestockerScore()
         cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
      }
 
+}
+
+void Jeu::RemiseZeroSauvegardes()
+{
+    string const nomFichier("damier.txt");
+    ofstream monFlux(nomFichier.c_str());
+    monFlux.close();
+    string const nomFichier2("score.txt");
+    ofstream monFlux2(nomFichier.c_str());
+    monFlux2.close();
 }
