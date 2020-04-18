@@ -42,6 +42,7 @@ void Jeu::Init()
             tab[i][j]=0;
         }
     }
+    FIN=0;
 }
 
 
@@ -151,6 +152,8 @@ void Jeu::FreeHistorique()
 
 void Jeu::cancel()
 {
+    if (FIN==0)
+    {
     int T = historique.size();
     if (T>1)
     {
@@ -171,6 +174,7 @@ void Jeu::cancel()
     scoreChanged();
     echec=false;
     endChanged();
+    }
 }
 
 
@@ -542,6 +546,8 @@ vector<vector<int>> Jeu::right()
 
 void Jeu::move_up()
 {
+    if (FIN==0)
+    {
     vector<vector<int>> CHANGEMENT = up();
     if (CHANGEMENT[0].size()>1)
     {
@@ -569,10 +575,13 @@ void Jeu::move_up()
     caseChanged();
     scoreChanged();
     endChanged();
+    }
 }
 
 void Jeu::move_down()
 {
+    if (FIN==0)
+    {
     vector<vector<int>> CHANGEMENT = down();
     if (CHANGEMENT[0].size()>1)
     {
@@ -600,10 +609,13 @@ void Jeu::move_down()
     caseChanged();
     scoreChanged();
     endChanged();
+    }
 }
 
 void Jeu::move_left()
 {
+    if (FIN==0)
+    {
     vector<vector<int>> CHANGEMENT = left();
     if (CHANGEMENT[0].size()>1)
     {
@@ -631,10 +643,13 @@ void Jeu::move_left()
     caseChanged();
     scoreChanged();
     endChanged();
+    }
 }
 
 void Jeu::move_right()
 {
+    if (FIN==0)
+    {
     vector<vector<int>> CHANGEMENT = right();
     if (CHANGEMENT[0].size()>1)
     {
@@ -662,6 +677,7 @@ void Jeu::move_right()
     caseChanged();
     scoreChanged();
     endChanged();
+    }
 }
 
 
@@ -820,10 +836,16 @@ QString Jeu::readBestScore()
 QString Jeu::readEnd()
 {
     if (Victoire())
+    {
+        FIN=1;
         return QString("You win !");
+    }
     else
         if(echec)
+        {
+            FIN=1;
             return QString("Game Over");
+        }
         else
             return QString("");
 

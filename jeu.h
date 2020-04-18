@@ -83,6 +83,7 @@ private:
     int taille ;
     int Score;
     int MeilleurScore;
+    int FIN;
     vector<int**> historique; // Répertorie tous les coups joues
     vector<int> historiqueScore; //Répertorie le score total apres chaque coup
     bool echec; //Indique que la partie est perdue
