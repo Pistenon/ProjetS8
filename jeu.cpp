@@ -77,7 +77,7 @@ void Jeu::caseAleatoire()
             int n = rand()%4;
             if (n>=1)
             {
-                tab[Nombre1][Nombre2]=2;
+                tab[Nombre1][Nombre2]=1024;
                 Score += 2;
             }
             else
@@ -812,4 +812,32 @@ QString Jeu::readScore()
 QString Jeu::readBestScore()
 {
     return QString::number(MeilleurScore);
+}
+
+
+QString Jeu::readEnd()
+{
+    if (Victoire())
+        return QString("You win !");
+    else
+        return QString("");
+
+}
+
+
+bool Jeu::Victoire()
+{
+    bool ans = false;
+    for (int i=0;i<taille;i++)
+    {
+        for (int j=0;j<taille;j++)
+        {
+            if (tab[i][j]==2048)
+            {
+                ans = true;
+                break;
+            }
+        }
+    }
+    return ans;
 }
