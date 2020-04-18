@@ -43,54 +43,67 @@ Window {
                     case "":
                         zone00.color="#cac0b4";
                         texte00.color="#5b3902";
+                        texte00.font.pixelSize=40;
                         break;
                     case "2":
                         zone00.color="#ede4db";
                         texte00.color="#5b3902";
+                        texte00.font.pixelSize=40;
                         break;
                     case "4":
                         zone00.color="#ebdfc9";
+                        texte00.font.pixelSize=40;
                         texte00.color="#5b3902";
                         break;
                     case "8":
                         zone00.color="#e9b280";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "16":
                         zone00.color="#f59563";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "32":
                         zone00.color="#e68469";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "64":
                         zone00.color="#e46b4c";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "128":
                         zone00.color="#eacc79";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "256":
                         zone00.color="#ecc961";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "512":
                         zone00.color="#e9c55b";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=40;
                         break;
                     case "1024":
                         zone00.color="#ecc440";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone00.color="#e7bf433";
+                        zone00.color="#e7bf43";
                         texte00.color="#f9f5f2";
+                        texte00.font.pixelSize=20;
                         break;
                     default:
                         zone00.color="#cac0b4";
                         texte00.color="#5b3902";
+                        texte00.font.pixelSize=40;
                         break;
                     }
                 }
@@ -123,54 +136,67 @@ Window {
                     case "":
                         zone01.color="#cac0b4";
                         texte01.color="#5b3902";
+                        texte01.font.pixelSize=40;
                         break;
                     case "2":
                         zone01.color="#ede4db";
                         texte01.color="#5b3902";
+                        texte01.font.pixelSize=40;
                         break;
                     case "4":
                         zone01.color="#ebdfc9";
                         texte01.color="#5b3902";
+                        texte01.font.pixelSize=40;
                         break;
                     case "8":
                         zone01.color="#e9b280";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "16":
                         zone01.color="#f59563";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "32":
                         zone01.color="#e68469";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "64":
                         zone01.color="#e46b4c";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "128":
                         zone01.color="#eacc79";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "256":
                         zone01.color="#ecc961";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "512":
                         zone01.color="#e9c55b";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=40;
                         break;
                     case "1024":
                         zone01.color="#ecc440";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone01.color="#e7bf433";
+                        zone01.color="#e7bf43";
                         texte01.color="#f9f5f2";
+                        texte01.font.pixelSize=20;
                         break;
                     default:
                         zone01.color="#cac0b4";
                         texte01.color="#5b3902";
+                        texte01.font.pixelSize=40;
                         break;
                     }
                 }
@@ -200,54 +226,67 @@ Window {
                     case "":
                         zone02.color="#cac0b4";
                         texte02.color="#5b3902";
+                        texte02.font.pixelSize=40;
                         break;
                     case "2":
                         zone02.color="#ede4db";
                         texte02.color="#5b3902";
+                        texte02.font.pixelSize=40;
                         break;
                     case "4":
                         zone02.color="#ebdfc9";
                         texte02.color="#5b3902";
+                        texte02.font.pixelSize=40;
                         break;
                     case "8":
                         zone02.color="#e9b280";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "16":
                         zone02.color="#f59563";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "32":
                         zone02.color="#e68469";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "64":
                         zone02.color="#e46b4c";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "128":
                         zone02.color="#eacc79";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "256":
                         zone02.color="#ecc961";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "512":
                         zone02.color="#e9c55b";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=40;
                         break;
                     case "1024":
                         zone02.color="#ecc440";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone02.color="#e7bf433";
+                        zone02.color="#e7bf43";
                         texte02.color="#f9f5f2";
+                        texte02.font.pixelSize=20;
                         break;
                     default:
                         zone02.color="#cac0b4";
                         texte02.color="#5b3902";
+                        texte02.font.pixelSize=40;
                         break;
                     }
                 }
@@ -277,54 +316,67 @@ Window {
                     case "":
                         zone03.color="#cac0b4";
                         texte03.color="#5b3902";
+                        texte03.font.pixelSize=40;
                         break;
                     case "2":
                         zone03.color="#ede4db";
                         texte03.color="#5b3902";
+                        texte03.font.pixelSize=40;
                         break;
                     case "4":
                         zone03.color="#ebdfc9";
                         texte03.color="#5b3902";
+                        texte03.font.pixelSize=40;
                         break;
                     case "8":
                         zone03.color="#e9b280";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "16":
                         zone03.color="#f59563";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "32":
                         zone03.color="#e68469";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "64":
                         zone03.color="#e46b4c";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "128":
                         zone03.color="#eacc79";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "256":
                         zone03.color="#ecc961";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "512":
                         zone03.color="#e9c55b";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=40;
                         break;
                     case "1024":
                         zone03.color="#ecc440";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone03.color="#e7bf433";
+                        zone03.color="#e7bf43";
                         texte03.color="#f9f5f2";
+                        texte03.font.pixelSize=20;
                         break;
                     default:
                         zone03.color="#cac0b4";
                         texte03.color="#5b3902";
+                        texte03.font.pixelSize=40;
                         break;
                     }
                 }
@@ -354,54 +406,67 @@ Window {
                     case "":
                         zone10.color="#cac0b4";
                         texte10.color="#5b3902";
+                        texte10.font.pixelSize=40;
                         break;
                     case "2":
                         zone10.color="#ede4db";
                         texte10.color="#5b3902";
+                        texte10.font.pixelSize=40;
                         break;
                     case "4":
                         zone10.color="#ebdfc9";
                         texte10.color="#5b3902";
+                        texte10.font.pixelSize=40;
                         break;
                     case "8":
                         zone10.color="#e9b280";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "16":
                         zone10.color="#f59563";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "32":
                         zone10.color="#e68469";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "64":
                         zone10.color="#e46b4c";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "128":
                         zone10.color="#eacc79";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "256":
                         zone10.color="#ecc961";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "512":
                         zone10.color="#e9c55b";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=40;
                         break;
                     case "1024":
                         zone10.color="#ecc440";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone10.color="#e7bf433";
+                        zone10.color="#e7bf43";
                         texte10.color="#f9f5f2";
+                        texte10.font.pixelSize=20;
                         break;
                     default:
                         zone10.color="#cac0b4";
                         texte10.color="#5b3902";
+                        texte10.font.pixelSize=40;
                         break;
                     }
                 }
@@ -431,54 +496,67 @@ Window {
                     case "":
                         zone11.color="#cac0b4";
                          texte11.color="#5b3902";
+                        texte11.font.pixelSize=40;
                         break;
                     case "2":
                         zone11.color="#ede4db";
                         texte11.color="#5b3902";
+                        texte11.font.pixelSize=40;
                         break;
                     case "4":
                         zone11.color="#ebdfc9";
                         texte11.color="#5b3902";
+                        texte11.font.pixelSize=40;
                         break;
                     case "8":
                         zone11.color="#e9b280";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "16":
                         zone11.color="#f59563";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "32":
                         zone11.color="#e68469";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "64":
                         zone11.color="#e46b4c";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "128":
                         zone11.color="#eacc79";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "256":
                         zone11.color="#ecc961";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "512":
                         zone11.color="#e9c55b";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=40;
                         break;
                     case "1024":
                         zone11.color="#ecc440";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone11.color="#e7bf433";
+                        zone11.color="#e7bf43";
                         texte11.color="#f9f5f2";
+                        texte11.font.pixelSize=20;
                         break;
                     default:
                         zone11.color="#cac0b4";
                         texte11.color="#5b3902";
+                        texte11.font.pixelSize=40;
                         break;
                     }
                 }
@@ -508,54 +586,67 @@ Window {
                     case "":
                         zone12.color="#cac0b4";
                         texte12.color="#5b3902";
+                        texte12.font.pixelSize=40;
                         break;
                     case "2":
                         zone12.color="#ede4db";
                         texte12.color="#5b3902";
+                        texte12.font.pixelSize=40;
                         break;
                     case "4":
                         zone12.color="#ebdfc9";
                         texte12.color="#5b3902";
+                        texte12.font.pixelSize=40;
                         break;
                     case "8":
                         zone12.color="#e9b280";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "16":
                         zone12.color="#f59563";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "32":
                         zone12.color="#e68469";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "64":
                         zone12.color="#e46b4c";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "128":
                         zone12.color="#eacc79";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "256":
                         zone12.color="#ecc961";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "512":
                         zone12.color="#e9c55b";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=40;
                         break;
                     case "1024":
                         zone12.color="#ecc440";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone12.color="#e7bf433";
+                        zone12.color="#e7bf43";
                         texte12.color="#f9f5f2";
+                        texte12.font.pixelSize=20;
                         break;
                     default:
                         zone12.color="#cac0b4";
                         texte12.color="#5b3902";
+                        texte12.font.pixelSize=40;
                         break;
                     }
                 }
@@ -585,54 +676,67 @@ Window {
                     case "":
                         zone13.color="#cac0b4";
                         texte13.color="#5b3902";
+                        texte13.font.pixelSize=40;
                         break;
                     case "2":
                         zone13.color="#ede4db";
                         texte13.color="#5b3902";
+                        texte13.font.pixelSize=40;
                         break;
                     case "4":
                         zone13.color="#ebdfc9";
                         texte13.color="#5b3902";
+                        texte13.font.pixelSize=40;
                         break;
                     case "8":
                         zone13.color="#e9b280";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "16":
                         zone13.color="#f59563";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "32":
                         zone13.color="#e68469";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "64":
                         zone13.color="#e46b4c";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "128":
                         zone13.color="#eacc79";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "256":
                         zone13.color="#ecc961";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "512":
                         zone13.color="#e9c55b";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=40;
                         break;
                     case "1024":
                         zone13.color="#ecc440";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone13.color="#e7bf433";
+                        zone13.color="#e7bf43";
                         texte13.color="#f9f5f2";
+                        texte13.font.pixelSize=20;
                         break;
                     default:
                         zone13.color="#cac0b4";
                         texte13.color="#5b3902";
+                        texte13.font.pixelSize=40;
                         break;
                     }
                 }
@@ -662,54 +766,67 @@ Window {
                     case "":
                         zone20.color="#cac0b4";
                         texte20.color="#5b3902";
+                        texte20.font.pixelSize=40;
                         break;
                     case "2":
                         zone20.color="#ede4db";
                         texte20.color="#5b3902";
+                        texte20.font.pixelSize=40;
                         break;
                     case "4":
                         zone20.color="#ebdfc9";
                         texte20.color="#5b3902";
+                        texte20.font.pixelSize=40;
                         break;
                     case "8":
                         zone20.color="#e9b280";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "16":
                         zone20.color="#f59563";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "32":
                         zone20.color="#e68469";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "64":
                         zone20.color="#e46b4c";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "128":
                         zone20.color="#eacc79";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "256":
                         zone20.color="#ecc961";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "512":
                         zone20.color="#e9c55b";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=40;
                         break;
                     case "1024":
                         zone20.color="#ecc440";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone20.color="#e7bf433";
+                        zone20.color="#e7bf43";
                         texte20.color="#f9f5f2";
+                        texte20.font.pixelSize=20;
                         break;
                     default:
                         zone20.color="#cac0b4";
                         texte20.color="#5b3902";
+                        texte20.font.pixelSize=40;
                         break;
                     }
                 }
@@ -739,54 +856,67 @@ Window {
                     case "":
                         zone21.color="#cac0b4";
                         texte21.color="#5b3902";
+                        texte21.font.pixelSize=40;
                         break;
                     case "2":
                         zone21.color="#ede4db";
                         texte21.color="#5b3902";
+                        texte21.font.pixelSize=40;
                         break;
                     case "4":
                         zone21.color="#ebdfc9";
                         texte21.color="#5b3902";
+                        texte21.font.pixelSize=40;
                         break;
                     case "8":
                         zone21.color="#e9b280";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "16":
                         zone21.color="#f59563";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "32":
                         zone21.color="#e68469";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "64":
                         zone21.color="#e46b4c";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "128":
                         zone21.color="#eacc79";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "256":
                         zone21.color="#ecc961";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "512":
                         zone21.color="#e9c55b";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=40;
                         break;
                     case "1024":
                         zone21.color="#ecc440";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone21.color="#e7bf433";
+                        zone21.color="#e7bf43";
                         texte21.color="#f9f5f2";
+                        texte21.font.pixelSize=20;
                         break;
                     default:
                         zone21.color="#cac0b4";
                         texte21.color="#5b3902";
+                        texte21.font.pixelSize=40;
                         break;
                     }
                 }
@@ -816,54 +946,67 @@ Window {
                     case "":
                         zone22.color="#cac0b4";
                         texte22.color="#5b3902";
+                        texte22.font.pixelSize=40;
                         break;
                     case "2":
                         zone22.color="#ede4db";
                         texte22.color="#5b3902";
+                        texte22.font.pixelSize=40;
                         break;
                     case "4":
                         zone22.color="#ebdfc9";
                         texte22.color="#5b3902";
+                        texte22.font.pixelSize=40;
                         break;
                     case "8":
                         zone22.color="#e9b280";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "16":
                         zone22.color="#f59563";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "32":
                         zone22.color="#e68469";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "64":
                         zone22.color="#e46b4c";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "128":
                         zone22.color="#eacc79";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "256":
                         zone22.color="#ecc961";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "512":
                         zone22.color="#e9c55b";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=40;
                         break;
                     case "1024":
                         zone22.color="#ecc440";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone22.color="#e7bf433";
+                        zone22.color="#e7bf43";
                         texte22.color="#f9f5f2";
+                        texte22.font.pixelSize=20;
                         break;
                     default:
                         zone22.color="#cac0b4";
                         texte22.color="#5b3902";
+                        texte22.font.pixelSize=40;
                         break;
                     }
                 }
@@ -893,54 +1036,67 @@ Window {
                     case "":
                         zone23.color="#cac0b4";
                         texte23.color="#5b3902";
+                        texte23.font.pixelSize=40;
                         break;
                     case "2":
                         zone23.color="#ede4db";
                         texte23.color="#5b3902";
+                        texte23.font.pixelSize=40;
                         break;
                     case "4":
                         zone23.color="#ebdfc9";
                         texte23.color="#5b3902";
+                        texte23.font.pixelSize=40;
                         break;
                     case "8":
                         zone23.color="#e9b280";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "16":
                         zone23.color="#f59563";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "32":
                         zone23.color="#e68469";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "64":
                         zone23.color="#e46b4c";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "128":
                         zone23.color="#eacc79";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "256":
                         zone23.color="#ecc961";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "512":
                         zone23.color="#e9c55b";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=40;
                         break;
                     case "1024":
                         zone23.color="#ecc440";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone23.color="#e7bf433";
+                        zone23.color="#e7bf43";
                         texte23.color="#f9f5f2";
+                        texte23.font.pixelSize=20;
                         break;
                     default:
                         zone23.color="#cac0b4";
                         texte23.color="#5b3902";
+                        texte23.font.pixelSize=40;
                         break;
                     }
                 }
@@ -970,54 +1126,67 @@ Window {
                     case "":
                         zone30.color="#cac0b4";
                         texte30.color="#5b3902";
+                        texte30.font.pixelSize=40;
                         break;
                     case "2":
                         zone30.color="#ede4db";
                         texte30.color="#5b3902";
+                        texte30.font.pixelSize=40;
                         break;
                     case "4":
                         zone30.color="#ebdfc9";
                         texte30.color="#5b3902";
+                        texte30.font.pixelSize=40;
                         break;
                     case "8":
                         zone30.color="#e9b280";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "16":
                         zone30.color="#f59563";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "32":
                         zone30.color="#e68469";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "64":
                         zone30.color="#e46b4c";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "128":
                         zone30.color="#eacc79";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "256":
                         zone30.color="#ecc961";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "512":
                         zone30.color="#e9c55b";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=40;
                         break;
                     case "1024":
                         zone30.color="#ecc440";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone30.color="#e7bf433";
+                        zone30.color="#e7bf43";
                         texte30.color="#f9f5f2";
+                        texte30.font.pixelSize=20;
                         break;
                     default:
                         zone30.color="#cac0b4";
                         texte30.color="#5b3902";
+                        texte30.font.pixelSize=40;
                         break;
                     }
                 }
@@ -1047,54 +1216,67 @@ Window {
                     case "":
                         zone31.color="#cac0b4";
                         texte31.color="#5b3902";
+                        texte31.font.pixelSize=40;
                         break;
                     case "2":
                         zone31.color="#ede4db";
                         texte31.color="#5b3902";
+                        texte31.font.pixelSize=40;
                         break;
                     case "4":
                         zone31.color="#ebdfc9";
                         texte31.color="#5b3902";
+                        texte31.font.pixelSize=40;
                         break;
                     case "8":
                         zone31.color="#e9b280";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "16":
                         zone31.color="#f59563";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "32":
                         zone31.color="#e68469";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "64":
                         zone31.color="#e46b4c";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "128":
                         zone31.color="#eacc79";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "256":
                         zone31.color="#ecc961";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "512":
                         zone31.color="#e9c55b";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=40;
                         break;
                     case "1024":
                         zone31.color="#ecc440";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone31.color="#e7bf433";
+                        zone31.color="#e7bf43";
                         texte31.color="#f9f5f2";
+                        texte31.font.pixelSize=20;
                         break;
                     default:
                         zone31.color="#cac0b4";
                         texte31.color="#5b3902";
+                        texte31.font.pixelSize=40;
                         break;
                     }
                 }
@@ -1124,54 +1306,67 @@ Window {
                     case "":
                         zone32.color="#cac0b4";
                         texte32.color="#5b3902";
+                        texte32.font.pixelSize=40;
                         break;
                     case "2":
                         zone32.color="#ede4db";
                         texte32.color="#5b3902";
+                        texte32.font.pixelSize=40;
                         break;
                     case "4":
                         zone32.color="#ebdfc9";
                         texte32.color="#5b3902";
+                        texte32.font.pixelSize=40;
                         break;
                     case "8":
                         zone32.color="#e9b280";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "16":
                         zone32.color="#f59563";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "32":
                         zone32.color="#e68469";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "64":
                         zone32.color="#e46b4c";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "128":
                         zone32.color="#eacc79";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "256":
                         zone32.color="#ecc961";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "512":
                         zone32.color="#e9c55b";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=40;
                         break;
                     case "1024":
                         zone32.color="#ecc440";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone32.color="#e7bf433";
+                        zone32.color="#e7bf43";
                         texte32.color="#f9f5f2";
+                        texte32.font.pixelSize=20;
                         break;
                     default:
                         zone32.color="#cac0b4";
                         texte32.color="#5b3902";
+                        texte32.font.pixelSize=40;
                         break;
                     }
                 }
@@ -1201,54 +1396,67 @@ Window {
                     case "":
                         zone33.color="#cac0b4";
                         texte33.color="#5b3902";
+                        texte33.font.pixelSize=40;
                         break;
                     case "2":
                         zone33.color="#ede4db";
                         texte33.color="#5b3902";
+                        texte33.font.pixelSize=40;
                         break;
                     case "4":
                         zone33.color="#ebdfc9";
                         texte33.color="#5b3902";
+                        texte33.font.pixelSize=40;
                         break;
                     case "8":
                         zone33.color="#e9b280";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "16":
                         zone33.color="#f59563";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "32":
                         zone33.color="#e68469";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "64":
                         zone33.color="#e46b4c";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "128":
                         zone33.color="#eacc79";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "256":
                         zone33.color="#ecc961";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "512":
                         zone33.color="#e9c55b";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=40;
                         break;
                     case "1024":
                         zone33.color="#ecc440";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=20;
                         break;
                     case "2048":
-                        zone33.color="#e7bf433";
+                        zone33.color="#e7bf43";
                         texte33.color="#f9f5f2";
+                        texte33.font.pixelSize=20;
                         break;
                     default:
                         zone33.color="#cac0b4";
                         texte33.color="#5b3902";
+                        texte33.font.pixelSize=40;
                         break;
                     }
                 }
