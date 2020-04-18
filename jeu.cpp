@@ -108,6 +108,7 @@ void Jeu::nouvellePartie()
     Score = 0;
     caseAleatoire();
     caseAleatoire();
+    add_historique();
     caseChanged();
     scoreChanged();
 }
