@@ -104,6 +104,7 @@ int Jeu::NbreAlea()
 void Jeu::nouvellePartie()
 {
     Free();
+    FreeHistorique();
     Init();
     Score = 0;
     caseAleatoire();
@@ -131,6 +132,26 @@ void Jeu::add_historique()
     historique.push_back(tab2);
 }
 
+void Jeu::FreeHistorique()
+{
+    int T=historique.size();
+    while (T>0)
+    {
+       historique.pop_back();
+       T=historique.size();
+    }
+
+    /*
+    int T=historique.size();
+    for (int s=T-1;s>-1;s--)
+    {
+        for (int i=0;i<taille;i++)
+            delete [] historique[s][i];
+        delete [] historique[s];
+    }
+    */
+}
+
 
 void Jeu::cancel()
 {
@@ -140,13 +161,14 @@ void Jeu::cancel()
     for (int i = 0 ; i < taille ; i++)
         for (int j = 0 ; j < taille ; j++)
             tab[i][j] = historique[T-2][i][j];
-
+    /*
     for (int i=0;i<taille;i++)
         delete [] historique[T-1][i];
     delete [] historique[T-1];
-
-    caseChanged();
+    */
+    historique.pop_back();
     }
+    caseChanged();
 }
 
 
