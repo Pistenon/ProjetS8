@@ -670,7 +670,7 @@ void Jeu::move_right()
     {
         MeilleurScore=Score;
     }
-    historique.push_back(tab);
+    add_historique();
     caseChanged();
     scoreChanged();
 }
