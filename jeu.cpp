@@ -88,6 +88,7 @@ void Jeu::nouvellePartie()
     Init();
     caseAleatoire();
     caseAleatoire();
+    caseChanged();
     Score=2;
 }
 
