@@ -62,6 +62,8 @@ public:
     Q_INVOKABLE void move_down();
     Q_INVOKABLE void move_left();
     Q_INVOKABLE void move_right();
+    Q_INVOKABLE void cancel();
+    Q_INVOKABLE void add_historique();
 
     void Init();
     vector<vector<int>> up();
@@ -78,6 +80,7 @@ private:
     int taille ;
     int Score;
     int MeilleurScore;
+    vector<int**> historique; // Répertorie tous les coups joues
     void Free();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
     bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
