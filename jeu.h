@@ -32,6 +32,8 @@ public:
     Q_PROPERTY(QString case31 READ readCase31 NOTIFY caseChanged)
     Q_PROPERTY(QString case32 READ readCase32 NOTIFY caseChanged)
     Q_PROPERTY(QString case33 READ readCase33 NOTIFY caseChanged)
+    Q_PROPERTY(QString score READ readScore NOTIFY scoreChanged)
+    Q_PROPERTY(QString bestScore READ readBestScore NOTIFY scoreChanged)
 
     QString readCase00();
     QString readCase01();
@@ -49,6 +51,9 @@ public:
     QString readCase31();
     QString readCase32();
     QString readCase33();
+    QString readScore();
+    QString readBestScore();
+
 
     Q_INVOKABLE void caseAleatoire();
     Q_INVOKABLE void nouvellePartie();
@@ -66,6 +71,7 @@ public:
 
 signals:
     void caseChanged();
+    void scoreChanged();
 
 private:
     int **tab;
