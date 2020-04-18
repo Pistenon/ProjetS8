@@ -1101,30 +1101,34 @@ Window {
 
     Text {
         id: titre
-        x: 100
-        y: 13
-        width: 139
-        height: 64
+        x: 96
+        y: 7
+        width: 164
+        height: 76
+        color: "#796c67"
         text: qsTr("2048")
         font.bold: true
-        font.pixelSize: 50
+        font.pixelSize: 60
     }
 
     Rectangle {
         id: score
-        x: 245
-        y: 13
-        width: 134
+        x: 266
+        y: 19
+        width: 112
         height: 64
-        color: "#ffffff"
+        color: "#bbada0"
 
         Text {
             id: scoreText
-            x: 43
+            x: 0
             y: 0
-            width: 48
+            width: 112
             height: 22
-            text: qsTr("Score")
+            text: qsTr("SCORE")
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            color:"#e6d8cd"
             font.bold: true
             font.family: "Verdana"
             font.pixelSize: 16
@@ -1133,10 +1137,11 @@ Window {
         Text {
             id: scoreNombre
             x: 0
-            y: 34
-            width: 134
-            height: 30
-            text: qsTr("Text")
+            y: 16
+            width: 112
+            height: 48
+            color:"#fcfaf8"
+            text: jeu.score
             font.bold: true
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -1146,18 +1151,20 @@ Window {
 
     Rectangle {
         id: bestScore
-        x: 404
-        y: 13
-        width: 134
+        x: 384
+        y: 19
+        width: 116
         height: 64
-        color: "#ffffff"
+        color: "#bbada0"
         Text {
-            id: bestScoreText1
+            id: bestScoreText
             x: 0
             y: 0
-            width: 134
+            width: 116
             height: 22
-            text: qsTr("Meilleur Score")
+            color:"#e6d8cd"
+            text: qsTr("BEST")
+            verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             font.family: "Verdana"
@@ -1165,12 +1172,13 @@ Window {
         }
 
         Text {
-            id: bestScoreNombre1
+            id: bestScoreNombre
             x: 0
-            y: 34
-            width: 134
-            height: 30
-            text: qsTr("Text")
+            y: 14
+            width: 116
+            height: 50
+            color:"#fcfaf8"
+            text: jeu.bestScore
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.bold: true
