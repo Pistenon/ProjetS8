@@ -344,7 +344,7 @@ vector<vector<int>> Jeu::left()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
-    for (int j=taille-2;j<taille;j++)
+    for (int j=1;j<taille;j++)
     {
         for (int i=0;i<taille;i++)
         {
@@ -431,7 +431,7 @@ vector<vector<int>> Jeu::right()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
-    for (int j=1;j>-1;j--)
+    for (int j=taille-2;j>-1;j--)
     {
         for (int i=0;i<taille;i++)
         {
