@@ -66,32 +66,38 @@ void Jeu::Free()
 
 void Jeu::caseAleatoire()
 {
-    // On suppose dans cette fonction qu'il y a au moins une case de libre dans le tableau (le test a été effectué avant l'appel de cette fonction)
-    int Nombre1 = NbreAlea();
-    int Nombre2 = NbreAlea();
-    bool test = true;
-    while (test)
+    vector<vector<int>> casesVides;
+
+    //Creation liste des cases vides
+    for (int i=0;i<taille;i++)
     {
-        if (tab[Nombre1][Nombre2]==0)
+        for (int j=0;j<taille;j++)
         {
-            test=false;
-            int n = rand()%4;
-            if (n>=1)
+            if (tab[i][j]==0)
             {
-                tab[Nombre1][Nombre2]=2;
-                Score += 2;
+                casesVides.push_back(vector<int>(2));
+                int s = casesVides.size();
+                casesVides[s-1][0]=i;
+                casesVides[s-1][1]=j;
             }
-            else
-            {
-                tab[Nombre1][Nombre2]=4;
-                Score += 4;
-            }
+
+
         }
-        else
-        {
-            Nombre1=NbreAlea();
-            Nombre2=NbreAlea();
-        }
+    }
+
+
+    int t=casesVides.size();
+    int a = rand()%t;
+    int n = rand()%4;
+    if (n>=1)
+    {
+        tab[casesVides[a][0]][casesVides[a][1]]=2;
+        Score += 2;
+    }
+    else
+    {
+        tab[casesVides[a][0]][casesVides[a][1]]=4;
+        Score += 4;
     }
 }
 
