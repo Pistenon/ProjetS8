@@ -1683,5 +1683,31 @@ Window {
         }
     }
 
+    Rectangle {
+        id: save
+        x: 5
+        y: 528
+        width: 89
+        height: 50
+        color: "#baae9f"
+
+        Text {
+            id: element1
+            x: 0
+            y: 9
+            color: "#ecded3"
+            text: qsTr("Sauver")
+            font.family: "Verdana"
+            font.pixelSize: 25
+        }
+
+        MouseArea {
+            id: mouseAreaSauver
+            width: 89
+            height: 50
+            onClicked: jeu.stocker()
+        }
+    }
+
 
 }

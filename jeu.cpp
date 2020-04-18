@@ -881,7 +881,7 @@ bool Jeu::Victoire()
     return ans;
 }
 
-void Jeu::Stocker()
+void Jeu::stocker()
 {
     string const nomFichier("damier.txt");
     ofstream monFlux(nomFichier.c_str());
@@ -986,6 +986,6 @@ void Jeu::RemiseZeroSauvegardes()
     ofstream monFlux(nomFichier.c_str());
     monFlux.close();
     string const nomFichier2("score.txt");
-    ofstream monFlux2(nomFichier.c_str());
+    ofstream monFlux2(nomFichier2.c_str());
     monFlux2.close();
 }
