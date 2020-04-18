@@ -109,6 +109,10 @@ void Jeu::nouvellePartie()
     Score = 0;
     caseAleatoire();
     caseAleatoire();
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
     add_historique();
     caseChanged();
     scoreChanged();
