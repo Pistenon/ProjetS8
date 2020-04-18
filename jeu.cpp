@@ -4,6 +4,8 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -869,4 +871,59 @@ bool Jeu::Victoire()
         }
     }
     return ans;
+}
+
+void Jeu::Stocker()
+{
+    string const nomFichier("fluxtest.txt");
+    ofstream monFlux(nomFichier.c_str());
+    if (monFlux)
+    {
+        for (int i=0;i<taille;i++)
+        {
+            for (int j=0;j<taille;j++)
+            {
+                monFlux << tab[i][j] << endl;
+            }
+        }
+    }
+    else
+    {
+        cout << "Erreur pour le fichier";
+    }
+}
+
+void Jeu::Reconstruire()
+{
+    ifstream fichier("fluxtest.txt");
+
+    if(fichier)
+    {
+
+        string ligne;
+        int i=0;
+        int j=0;
+        while(getline(fichier, ligne))
+        {
+            if (j<taille)
+            {
+                int myint1 = std::stoi(ligne);
+                tab[i][j]=myint1;
+                j+=1;
+            }
+            else
+            {
+                j=0;
+                i+=1;
+                int myint1 = std::stoi(ligne);
+                tab[i][j]=myint1;
+                j+=1;
+            }
+
+         }
+     }
+     else
+     {
+        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
+     }
 }

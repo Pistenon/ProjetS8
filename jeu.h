@@ -72,6 +72,8 @@ public:
     vector<vector<int>> down();
     vector<vector<int>> left();
     vector<vector<int>> right();
+    void Stocker();
+    void Reconstruire();
 
 signals:
     void caseChanged();
