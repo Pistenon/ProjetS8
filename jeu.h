@@ -73,7 +73,9 @@ public:
     vector<vector<int>> left();
     vector<vector<int>> right();
     void Stocker();
-    void Reconstruire();
+    int Reconstruire();
+    void StockerScore();
+    void DestockerScore();
 
 signals:
     void caseChanged();

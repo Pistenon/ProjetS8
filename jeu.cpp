@@ -20,10 +20,16 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     echec=false;
 
     Init();
-
-    caseAleatoire();
-    caseAleatoire();
-
+    int test=Reconstruire();
+    if (test==0)
+    {
+        caseAleatoire();
+        caseAleatoire();
+    }
+    else
+    {
+        DestockerScore();
+    }
     add_historique();
 
 }
@@ -89,7 +95,7 @@ void Jeu::caseAleatoire()
     int n = rand()%4;
     if (n>=1)
     {
-        tab[casesVides[a][0]][casesVides[a][1]]=1024;
+        tab[casesVides[a][0]][casesVides[a][1]]=2;
     }
     else
     {
@@ -875,7 +881,7 @@ bool Jeu::Victoire()
 
 void Jeu::Stocker()
 {
-    string const nomFichier("fluxtest.txt");
+    string const nomFichier("damier.txt");
     ofstream monFlux(nomFichier.c_str());
     if (monFlux)
     {
@@ -886,16 +892,17 @@ void Jeu::Stocker()
                 monFlux << tab[i][j] << endl;
             }
         }
+        StockerScore();
     }
     else
     {
-        cout << "Erreur pour le fichier";
+        cout << "Erreur  : Impossible d'ouvrir le fichier en ecriture.";
     }
 }
 
-void Jeu::Reconstruire()
+int Jeu::Reconstruire()
 {
-    ifstream fichier("fluxtest.txt");
+    ifstream fichier("damier.txt");
 
     if(fichier)
     {
@@ -921,9 +928,52 @@ void Jeu::Reconstruire()
             }
 
          }
+        if (i!=taille-1)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+     }
+     else
+     {
+        return 0;
+        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
+     }
+}
+
+void Jeu::StockerScore()
+{
+    string const nomFichier("score.txt");
+    ofstream monFlux(nomFichier.c_str());
+    if (monFlux)
+    {
+        monFlux << Score << endl;
+    }
+    else
+    {
+        cout << "Erreur  : Impossible d'ouvrir le fichier en ecriture.";
+    }
+}
+
+void Jeu::DestockerScore()
+{
+    ifstream fichier("score.txt");
+
+    if(fichier)
+    {
+        string ligne;
+        while(getline(fichier, ligne))
+        {
+            int myint1 = std::stoi(ligne);
+            Score=myint1;
+        }
      }
      else
      {
         cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
      }
+
 }
