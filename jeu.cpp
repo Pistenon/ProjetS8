@@ -942,7 +942,6 @@ int Jeu::Reconstruire()
      else
      {
         return 0;
-        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
      }
 }
 
