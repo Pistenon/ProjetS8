@@ -495,7 +495,7 @@ Window {
                     switch(texte11.text){
                     case "":
                         zone11.color="#cac0b4";
-                         texte11.color="#5b3902";
+                        texte11.color="#5b3902";
                         texte11.font.pixelSize=40;
                         break;
                     case "2":
@@ -1634,4 +1634,46 @@ Window {
             onClicked: jeu.cancel()
         }
     }
+
+    Rectangle {
+        id: ecranFin
+        x: 100
+        y: 100
+        width: 400
+        height: 400
+        color: "#f9f9b0"
+        opacity: 0.557
+        visible: false
+
+        Text {
+            id: texteFin
+            x: 0
+            y: 0
+            width: 400
+            height: 400
+            text: jeu.end
+            font.family: "Verdana"
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 60
+            onTextChanged: {
+                switch(texteFin.text){
+                case "":
+                    ecranFin.visible=false
+                    break;
+                case "You win !":
+                    ecranFin.visible = true
+                    break;
+                case "Game Over":
+                    ecranFin.visible = true
+                    break;
+                default:
+                    ecranFin.visible=false
+                    break;
+                }
+            }
+        }
+    }
+
+
 }
