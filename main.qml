@@ -1490,6 +1490,8 @@ Window {
         }
 
 
+
+
         TextInput {
             id: nouvellePartie
             x: 0
@@ -1525,6 +1527,7 @@ Window {
         text: qsTr("2048")
         font.bold: true
         font.pixelSize: 60
+
     }
 
     Rectangle {
@@ -1534,6 +1537,7 @@ Window {
         width: 112
         height: 64
         color: "#bbada0"
+
 
         Text {
             id: scoreText
