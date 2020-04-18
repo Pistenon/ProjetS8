@@ -87,7 +87,7 @@ void Jeu::caseAleatoire()
     int n = rand()%4;
     if (n>=1)
     {
-        tab[casesVides[a][0]][casesVides[a][1]]=2;
+        tab[casesVides[a][0]][casesVides[a][1]]=1024;
     }
     else
     {
@@ -152,8 +152,10 @@ void Jeu::FreeHistorique()
 
 void Jeu::cancel()
 {
-    if (FIN==0)
+    if (FIN==1)
     {
+        FIN=0;
+    }
     int T = historique.size();
     if (T>1)
     {
@@ -174,7 +176,7 @@ void Jeu::cancel()
     scoreChanged();
     echec=false;
     endChanged();
-    }
+
 }
 
 
