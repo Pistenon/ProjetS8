@@ -32,7 +32,7 @@ Window {
                 id: texte00
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -42,18 +42,18 @@ Window {
                     switch(texte00.text){
                     case "":
                         zone00.color="#cac0b4";
-                        texte00.color="#5b3902";
+                        texte00.color="#756d67";
                         texte00.font.pixelSize=40;
                         break;
                     case "2":
                         zone00.color="#ede4db";
-                        texte00.color="#5b3902";
+                        texte00.color="#756d67";
                         texte00.font.pixelSize=40;
                         break;
                     case "4":
                         zone00.color="#ebdfc9";
                         texte00.font.pixelSize=40;
-                        texte00.color="#5b3902";
+                        texte00.color="#756d67";
                         break;
                     case "8":
                         zone00.color="#e9b280";
@@ -102,7 +102,7 @@ Window {
                         break;
                     default:
                         zone00.color="#cac0b4";
-                        texte00.color="#5b3902";
+                        texte00.color="#756d67";
                         texte00.font.pixelSize=40;
                         break;
                     }
@@ -125,7 +125,7 @@ Window {
                 id: texte01
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -135,17 +135,17 @@ Window {
                     switch(texte01.text){
                     case "":
                         zone01.color="#cac0b4";
-                        texte01.color="#5b3902";
+                        texte01.color="#756d67";
                         texte01.font.pixelSize=40;
                         break;
                     case "2":
                         zone01.color="#ede4db";
-                        texte01.color="#5b3902";
+                        texte01.color="#756d67";
                         texte01.font.pixelSize=40;
                         break;
                     case "4":
                         zone01.color="#ebdfc9";
-                        texte01.color="#5b3902";
+                        texte01.color="#756d67";
                         texte01.font.pixelSize=40;
                         break;
                     case "8":
@@ -195,7 +195,7 @@ Window {
                         break;
                     default:
                         zone01.color="#cac0b4";
-                        texte01.color="#5b3902";
+                        texte01.color="#756d67";
                         texte01.font.pixelSize=40;
                         break;
                     }
@@ -215,7 +215,7 @@ Window {
                 id: texte02
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -225,17 +225,17 @@ Window {
                     switch(texte02.text){
                     case "":
                         zone02.color="#cac0b4";
-                        texte02.color="#5b3902";
+                        texte02.color="#756d67";
                         texte02.font.pixelSize=40;
                         break;
                     case "2":
                         zone02.color="#ede4db";
-                        texte02.color="#5b3902";
+                        texte02.color="#756d67";
                         texte02.font.pixelSize=40;
                         break;
                     case "4":
                         zone02.color="#ebdfc9";
-                        texte02.color="#5b3902";
+                        texte02.color="#756d67";
                         texte02.font.pixelSize=40;
                         break;
                     case "8":
@@ -285,7 +285,7 @@ Window {
                         break;
                     default:
                         zone02.color="#cac0b4";
-                        texte02.color="#5b3902";
+                        texte02.color="#756d67";
                         texte02.font.pixelSize=40;
                         break;
                     }
@@ -305,7 +305,7 @@ Window {
                 id: texte03
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -315,17 +315,17 @@ Window {
                     switch(texte03.text){
                     case "":
                         zone03.color="#cac0b4";
-                        texte03.color="#5b3902";
+                        texte03.color="#756d67";
                         texte03.font.pixelSize=40;
                         break;
                     case "2":
                         zone03.color="#ede4db";
-                        texte03.color="#5b3902";
+                        texte03.color="#756d67";
                         texte03.font.pixelSize=40;
                         break;
                     case "4":
                         zone03.color="#ebdfc9";
-                        texte03.color="#5b3902";
+                        texte03.color="#756d67";
                         texte03.font.pixelSize=40;
                         break;
                     case "8":
@@ -375,7 +375,7 @@ Window {
                         break;
                     default:
                         zone03.color="#cac0b4";
-                        texte03.color="#5b3902";
+                        texte03.color="#756d67";
                         texte03.font.pixelSize=40;
                         break;
                     }
@@ -395,7 +395,7 @@ Window {
                 id: texte10
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -405,17 +405,17 @@ Window {
                     switch(texte10.text){
                     case "":
                         zone10.color="#cac0b4";
-                        texte10.color="#5b3902";
+                        texte10.color="#756d67";
                         texte10.font.pixelSize=40;
                         break;
                     case "2":
                         zone10.color="#ede4db";
-                        texte10.color="#5b3902";
+                        texte10.color="#756d67";
                         texte10.font.pixelSize=40;
                         break;
                     case "4":
                         zone10.color="#ebdfc9";
-                        texte10.color="#5b3902";
+                        texte10.color="#756d67";
                         texte10.font.pixelSize=40;
                         break;
                     case "8":
@@ -465,7 +465,7 @@ Window {
                         break;
                     default:
                         zone10.color="#cac0b4";
-                        texte10.color="#5b3902";
+                        texte10.color="#756d67";
                         texte10.font.pixelSize=40;
                         break;
                     }
@@ -485,7 +485,7 @@ Window {
                 id: texte11
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -495,17 +495,17 @@ Window {
                     switch(texte11.text){
                     case "":
                         zone11.color="#cac0b4";
-                        texte11.color="#5b3902";
+                        texte11.color="#756d67";
                         texte11.font.pixelSize=40;
                         break;
                     case "2":
                         zone11.color="#ede4db";
-                        texte11.color="#5b3902";
+                        texte11.color="#756d67";
                         texte11.font.pixelSize=40;
                         break;
                     case "4":
                         zone11.color="#ebdfc9";
-                        texte11.color="#5b3902";
+                        texte11.color="#756d67";
                         texte11.font.pixelSize=40;
                         break;
                     case "8":
@@ -555,7 +555,7 @@ Window {
                         break;
                     default:
                         zone11.color="#cac0b4";
-                        texte11.color="#5b3902";
+                        texte11.color="#756d67";
                         texte11.font.pixelSize=40;
                         break;
                     }
@@ -575,7 +575,7 @@ Window {
                 id: texte12
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -585,17 +585,17 @@ Window {
                     switch(texte12.text){
                     case "":
                         zone12.color="#cac0b4";
-                        texte12.color="#5b3902";
+                        texte12.color="#756d67";
                         texte12.font.pixelSize=40;
                         break;
                     case "2":
                         zone12.color="#ede4db";
-                        texte12.color="#5b3902";
+                        texte12.color="#756d67";
                         texte12.font.pixelSize=40;
                         break;
                     case "4":
                         zone12.color="#ebdfc9";
-                        texte12.color="#5b3902";
+                        texte12.color="#756d67";
                         texte12.font.pixelSize=40;
                         break;
                     case "8":
@@ -645,7 +645,7 @@ Window {
                         break;
                     default:
                         zone12.color="#cac0b4";
-                        texte12.color="#5b3902";
+                        texte12.color="#756d67";
                         texte12.font.pixelSize=40;
                         break;
                     }
@@ -665,7 +665,7 @@ Window {
                 id: texte13
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -675,17 +675,17 @@ Window {
                     switch(texte13.text){
                     case "":
                         zone13.color="#cac0b4";
-                        texte13.color="#5b3902";
+                        texte13.color="#756d67";
                         texte13.font.pixelSize=40;
                         break;
                     case "2":
                         zone13.color="#ede4db";
-                        texte13.color="#5b3902";
+                        texte13.color="#756d67";
                         texte13.font.pixelSize=40;
                         break;
                     case "4":
                         zone13.color="#ebdfc9";
-                        texte13.color="#5b3902";
+                        texte13.color="#756d67";
                         texte13.font.pixelSize=40;
                         break;
                     case "8":
@@ -735,7 +735,7 @@ Window {
                         break;
                     default:
                         zone13.color="#cac0b4";
-                        texte13.color="#5b3902";
+                        texte13.color="#756d67";
                         texte13.font.pixelSize=40;
                         break;
                     }
@@ -755,7 +755,7 @@ Window {
                 id: texte20
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -765,17 +765,17 @@ Window {
                     switch(texte20.text){
                     case "":
                         zone20.color="#cac0b4";
-                        texte20.color="#5b3902";
+                        texte20.color="#756d67";
                         texte20.font.pixelSize=40;
                         break;
                     case "2":
                         zone20.color="#ede4db";
-                        texte20.color="#5b3902";
+                        texte20.color="#756d67";
                         texte20.font.pixelSize=40;
                         break;
                     case "4":
                         zone20.color="#ebdfc9";
-                        texte20.color="#5b3902";
+                        texte20.color="#756d67";
                         texte20.font.pixelSize=40;
                         break;
                     case "8":
@@ -825,7 +825,7 @@ Window {
                         break;
                     default:
                         zone20.color="#cac0b4";
-                        texte20.color="#5b3902";
+                        texte20.color="#756d67";
                         texte20.font.pixelSize=40;
                         break;
                     }
@@ -845,7 +845,7 @@ Window {
                 id: texte21
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -855,17 +855,17 @@ Window {
                     switch(texte21.text){
                     case "":
                         zone21.color="#cac0b4";
-                        texte21.color="#5b3902";
+                        texte21.color="#756d67";
                         texte21.font.pixelSize=40;
                         break;
                     case "2":
                         zone21.color="#ede4db";
-                        texte21.color="#5b3902";
+                        texte21.color="#756d67";
                         texte21.font.pixelSize=40;
                         break;
                     case "4":
                         zone21.color="#ebdfc9";
-                        texte21.color="#5b3902";
+                        texte21.color="#756d67";
                         texte21.font.pixelSize=40;
                         break;
                     case "8":
@@ -915,7 +915,7 @@ Window {
                         break;
                     default:
                         zone21.color="#cac0b4";
-                        texte21.color="#5b3902";
+                        texte21.color="#756d67";
                         texte21.font.pixelSize=40;
                         break;
                     }
@@ -935,7 +935,7 @@ Window {
                 id: texte22
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -945,17 +945,17 @@ Window {
                     switch(texte22.text){
                     case "":
                         zone22.color="#cac0b4";
-                        texte22.color="#5b3902";
+                        texte22.color="#756d67";
                         texte22.font.pixelSize=40;
                         break;
                     case "2":
                         zone22.color="#ede4db";
-                        texte22.color="#5b3902";
+                        texte22.color="#756d67";
                         texte22.font.pixelSize=40;
                         break;
                     case "4":
                         zone22.color="#ebdfc9";
-                        texte22.color="#5b3902";
+                        texte22.color="#756d67";
                         texte22.font.pixelSize=40;
                         break;
                     case "8":
@@ -1005,7 +1005,7 @@ Window {
                         break;
                     default:
                         zone22.color="#cac0b4";
-                        texte22.color="#5b3902";
+                        texte22.color="#756d67";
                         texte22.font.pixelSize=40;
                         break;
                     }
@@ -1025,7 +1025,7 @@ Window {
                 id: texte23
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -1035,17 +1035,17 @@ Window {
                     switch(texte23.text){
                     case "":
                         zone23.color="#cac0b4";
-                        texte23.color="#5b3902";
+                        texte23.color="#756d67";
                         texte23.font.pixelSize=40;
                         break;
                     case "2":
                         zone23.color="#ede4db";
-                        texte23.color="#5b3902";
+                        texte23.color="#756d67";
                         texte23.font.pixelSize=40;
                         break;
                     case "4":
                         zone23.color="#ebdfc9";
-                        texte23.color="#5b3902";
+                        texte23.color="#756d67";
                         texte23.font.pixelSize=40;
                         break;
                     case "8":
@@ -1095,7 +1095,7 @@ Window {
                         break;
                     default:
                         zone23.color="#cac0b4";
-                        texte23.color="#5b3902";
+                        texte23.color="#756d67";
                         texte23.font.pixelSize=40;
                         break;
                     }
@@ -1115,7 +1115,7 @@ Window {
                 id: texte30
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -1125,17 +1125,17 @@ Window {
                     switch(texte30.text){
                     case "":
                         zone30.color="#cac0b4";
-                        texte30.color="#5b3902";
+                        texte30.color="#756d67";
                         texte30.font.pixelSize=40;
                         break;
                     case "2":
                         zone30.color="#ede4db";
-                        texte30.color="#5b3902";
+                        texte30.color="#756d67";
                         texte30.font.pixelSize=40;
                         break;
                     case "4":
                         zone30.color="#ebdfc9";
-                        texte30.color="#5b3902";
+                        texte30.color="#756d67";
                         texte30.font.pixelSize=40;
                         break;
                     case "8":
@@ -1185,7 +1185,7 @@ Window {
                         break;
                     default:
                         zone30.color="#cac0b4";
-                        texte30.color="#5b3902";
+                        texte30.color="#756d67";
                         texte30.font.pixelSize=40;
                         break;
                     }
@@ -1205,7 +1205,7 @@ Window {
                 id: texte31
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -1215,17 +1215,17 @@ Window {
                     switch(texte31.text){
                     case "":
                         zone31.color="#cac0b4";
-                        texte31.color="#5b3902";
+                        texte31.color="#756d67";
                         texte31.font.pixelSize=40;
                         break;
                     case "2":
                         zone31.color="#ede4db";
-                        texte31.color="#5b3902";
+                        texte31.color="#756d67";
                         texte31.font.pixelSize=40;
                         break;
                     case "4":
                         zone31.color="#ebdfc9";
-                        texte31.color="#5b3902";
+                        texte31.color="#756d67";
                         texte31.font.pixelSize=40;
                         break;
                     case "8":
@@ -1275,7 +1275,7 @@ Window {
                         break;
                     default:
                         zone31.color="#cac0b4";
-                        texte31.color="#5b3902";
+                        texte31.color="#756d67";
                         texte31.font.pixelSize=40;
                         break;
                     }
@@ -1295,7 +1295,7 @@ Window {
                 id: texte32
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -1305,17 +1305,17 @@ Window {
                     switch(texte32.text){
                     case "":
                         zone32.color="#cac0b4";
-                        texte32.color="#5b3902";
+                        texte32.color="#756d67";
                         texte32.font.pixelSize=40;
                         break;
                     case "2":
                         zone32.color="#ede4db";
-                        texte32.color="#5b3902";
+                        texte32.color="#756d67";
                         texte32.font.pixelSize=40;
                         break;
                     case "4":
                         zone32.color="#ebdfc9";
-                        texte32.color="#5b3902";
+                        texte32.color="#756d67";
                         texte32.font.pixelSize=40;
                         break;
                     case "8":
@@ -1365,7 +1365,7 @@ Window {
                         break;
                     default:
                         zone32.color="#cac0b4";
-                        texte32.color="#5b3902";
+                        texte32.color="#756d67";
                         texte32.font.pixelSize=40;
                         break;
                     }
@@ -1385,7 +1385,7 @@ Window {
                 id: texte33
                 width: 80
                 height: 80
-                color: "#5b3902"
+                color: "#756d67"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -1395,17 +1395,17 @@ Window {
                     switch(texte33.text){
                     case "":
                         zone33.color="#cac0b4";
-                        texte33.color="#5b3902";
+                        texte33.color="#756d67";
                         texte33.font.pixelSize=40;
                         break;
                     case "2":
                         zone33.color="#ede4db";
-                        texte33.color="#5b3902";
+                        texte33.color="#756d67";
                         texte33.font.pixelSize=40;
                         break;
                     case "4":
                         zone33.color="#ebdfc9";
-                        texte33.color="#5b3902";
+                        texte33.color="#756d67";
                         texte33.font.pixelSize=40;
                         break;
                     case "8":
@@ -1455,7 +1455,7 @@ Window {
                         break;
                     default:
                         zone33.color="#cac0b4";
-                        texte33.color="#5b3902";
+                        texte33.color="#756d67";
                         texte33.font.pixelSize=40;
                         break;
                     }
@@ -1667,9 +1667,13 @@ Window {
                     break;
                 case "You win !":
                     ecranFin.visible = true
+                    texteFin.color="#f8f6f1"
+                    ecranFin.color="#f9f9b0"
                     break;
                 case "Game Over":
                     ecranFin.visible = true
+                    texteFin.color="#796e63"
+                    ecranFin.color="#ffffff"
                     break;
                 default:
                     ecranFin.visible=false
