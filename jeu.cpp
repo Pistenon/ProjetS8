@@ -13,11 +13,18 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
 {
     tab = nullptr;
     taille = tailletableau;
+    Score = 0;
+    MeilleurScore=0;
 
     Init();
 
     caseAleatoire();
     caseAleatoire();
+
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore = Score;
+    }
 
 }
 
@@ -66,6 +73,7 @@ void Jeu::caseAleatoire()
         {
             test=false;
             tab[Nombre1][Nombre2]=2;
+            Score += 2;
         }
         else
         {
@@ -86,10 +94,11 @@ void Jeu::nouvellePartie()
 {
     Free();
     Init();
+    Score = 0;
     caseAleatoire();
     caseAleatoire();
     caseChanged();
-    Score=2;
+    scoreChanged();
 }
 
 bool Jeu::Cherche0()
@@ -192,10 +201,6 @@ vector<vector<int>> Jeu::up()
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
             }
         }
-    if (Score>MeilleurScore)
-    {
-        MeilleurScore=Score;
-    }
     return CHANGEMENT;
 }
 
@@ -285,10 +290,6 @@ vector<vector<int>> Jeu::down()
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
             }
         }
-    if (Score>MeilleurScore)
-    {
-        MeilleurScore=Score;
-    }
     return CHANGEMENT;
 }
 
@@ -376,10 +377,6 @@ vector<vector<int>> Jeu::left()
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
             }
         }
-    if (Score>MeilleurScore)
-    {
-        MeilleurScore=Score;
-    }
     return CHANGEMENT;
 }
 
@@ -467,10 +464,6 @@ vector<vector<int>> Jeu::right()
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
             }
         }
-    if (Score>MeilleurScore)
-    {
-        MeilleurScore=Score;
-    }
     return CHANGEMENT;
 }
 
@@ -498,7 +491,12 @@ void Jeu::move_up()
             caseAleatoire();
         }
     }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
     caseChanged();
+    scoreChanged();
 }
 
 void Jeu::move_down()
@@ -522,7 +520,12 @@ void Jeu::move_down()
             caseAleatoire();
         }
     }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
     caseChanged();
+    scoreChanged();
 }
 
 void Jeu::move_left()
@@ -546,7 +549,12 @@ void Jeu::move_left()
             caseAleatoire();
         }
     }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
     caseChanged();
+    scoreChanged();
 }
 
 void Jeu::move_right()
@@ -570,7 +578,12 @@ void Jeu::move_right()
             caseAleatoire();
         }
     }
+    if (Score>MeilleurScore)
+    {
+        MeilleurScore=Score;
+    }
     caseChanged();
+    scoreChanged();
 }
 
 
@@ -712,4 +725,15 @@ QString Jeu::readCase33()
         return QString::number(get_case(3,3));
     else
         return QString("");
+}
+
+QString Jeu::readScore()
+{
+    return QString::number(Score);
+}
+
+
+QString Jeu::readBestScore()
+{
+    return QString::number(MeilleurScore);
 }
