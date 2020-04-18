@@ -30,6 +30,8 @@ Window {
 
             Text {
                 id: texte00
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -95,6 +97,8 @@ Window {
 
             Text {
                 id: texte01
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -157,6 +161,8 @@ Window {
 
             Text {
                 id: texte02
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -219,6 +225,8 @@ Window {
 
             Text {
                 id: texte03
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -281,6 +289,8 @@ Window {
 
             Text {
                 id: texte10
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -343,6 +353,8 @@ Window {
 
             Text {
                 id: texte11
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -405,6 +417,8 @@ Window {
 
             Text {
                 id: texte12
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -467,6 +481,8 @@ Window {
 
             Text {
                 id: texte13
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -529,6 +545,8 @@ Window {
 
             Text {
                 id: texte20
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -591,6 +609,8 @@ Window {
 
             Text {
                 id: texte21
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -653,6 +673,8 @@ Window {
 
             Text {
                 id: texte22
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -715,6 +737,8 @@ Window {
 
             Text {
                 id: texte23
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -777,6 +801,8 @@ Window {
 
             Text {
                 id: texte30
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -839,6 +865,8 @@ Window {
 
             Text {
                 id: texte31
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -901,6 +929,8 @@ Window {
 
             Text {
                 id: texte32
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -963,6 +993,8 @@ Window {
 
             Text {
                 id: texte33
+                width: 80
+                height: 80
                 color: "#5b3902"
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
@@ -1022,7 +1054,7 @@ Window {
         y: 523
         width: 200
         height: 50
-        color: "#b8b8b2"
+        color: "#baae9f"
         focus: true
         Keys.onPressed: {
             switch (event.key) {
@@ -1048,7 +1080,7 @@ Window {
             y: 0
             width: 200
             height: 50
-            color: "#ffffff"
+            color: "#ecded3"
             text: "Nouvelle Partie"
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -1064,6 +1096,85 @@ Window {
             width: 200
             height: 50
             onClicked: jeu.nouvellePartie()
+        }
+    }
+
+    Text {
+        id: titre
+        x: 100
+        y: 13
+        width: 139
+        height: 64
+        text: qsTr("2048")
+        font.bold: true
+        font.pixelSize: 50
+    }
+
+    Rectangle {
+        id: score
+        x: 245
+        y: 13
+        width: 134
+        height: 64
+        color: "#ffffff"
+
+        Text {
+            id: scoreText
+            x: 43
+            y: 0
+            width: 48
+            height: 22
+            text: qsTr("Score")
+            font.bold: true
+            font.family: "Verdana"
+            font.pixelSize: 16
+        }
+
+        Text {
+            id: scoreNombre
+            x: 0
+            y: 34
+            width: 134
+            height: 30
+            text: qsTr("Text")
+            font.bold: true
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 20
+        }
+    }
+
+    Rectangle {
+        id: bestScore
+        x: 404
+        y: 13
+        width: 134
+        height: 64
+        color: "#ffffff"
+        Text {
+            id: bestScoreText1
+            x: 0
+            y: 0
+            width: 134
+            height: 22
+            text: qsTr("Meilleur Score")
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            font.family: "Verdana"
+            font.pixelSize: 16
+        }
+
+        Text {
+            id: bestScoreNombre1
+            x: 0
+            y: 34
+            width: 134
+            height: 30
+            text: qsTr("Text")
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            font.bold: true
+            font.pixelSize: 20
         }
     }
 }
