@@ -22,11 +22,6 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     caseAleatoire();
     caseAleatoire();
 
-    if (Score>MeilleurScore)
-    {
-        MeilleurScore = Score;
-    }
-
     add_historique();
 
 }
@@ -92,12 +87,10 @@ void Jeu::caseAleatoire()
     if (n>=1)
     {
         tab[casesVides[a][0]][casesVides[a][1]]=2;
-        Score += 2;
     }
     else
     {
         tab[casesVides[a][0]][casesVides[a][1]]=4;
-        Score += 4;
     }
 }
 
@@ -116,10 +109,7 @@ void Jeu::nouvellePartie()
     Score = 0;
     caseAleatoire();
     caseAleatoire();
-    if (Score>MeilleurScore)
-    {
-        MeilleurScore=Score;
-    }
+
     add_historique();
     caseChanged();
     scoreChanged();
@@ -250,10 +240,7 @@ vector<vector<int>> Jeu::up()
                         CHANGEMENT[s-1][0]=i;
                         CHANGEMENT[s-1][1]=j;
                         CHANGEMENT[s-1][4]=tab[i-UP][j];
-                        if (tab[i-UP][j]>Score) //Seul moment où le score peut augmenter
-                        {
-                            Score=tab[i-UP][j];
-                        }
+                        Score+=tab[i-UP][j];
                     }
                     else
                     {
@@ -341,10 +328,7 @@ vector<vector<int>> Jeu::down()
                         CHANGEMENT[s-1][0]=i;
                         CHANGEMENT[s-1][1]=j;
                         CHANGEMENT[s-1][4]=tab[i+DOWN][j];
-                        if (tab[i+DOWN][j]>Score) //Seul moment où le score peut augmenter
-                        {
-                            Score=tab[i+DOWN][j];
-                        }
+                        Score+=tab[i+DOWN][j];
                     }
                     else
                     {
@@ -430,10 +414,7 @@ vector<vector<int>> Jeu::left()
                         CHANGEMENT[s-1][0]=i;
                         CHANGEMENT[s-1][1]=j;
                         CHANGEMENT[s-1][4]=tab[i][j-LEFT];
-                        if (tab[i][j-LEFT]>Score) //Seul moment où le score peut augmenter
-                        {
-                            Score=tab[i][j-LEFT];
-                        }
+                        Score+=tab[i][j-LEFT];
                     }
                     else
                     {
@@ -519,10 +500,7 @@ vector<vector<int>> Jeu::right()
                         CHANGEMENT[s-1][0]=i;
                         CHANGEMENT[s-1][1]=j+RIGHT;
                         CHANGEMENT[s-1][4]=tab[i][j+RIGHT];
-                        if (tab[i][j+RIGHT]>Score) //Seul moment où le score peut augmenter
-                        {
-                            Score=tab[i][j+RIGHT];
-                        }
+                        Score+=tab[i][j+RIGHT];
                     }
                     else
                     {
