@@ -26,6 +26,8 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
         MeilleurScore = Score;
     }
 
+    add_historique();
+
 }
 
 void Jeu::Init()
@@ -109,6 +111,42 @@ void Jeu::nouvellePartie()
     caseChanged();
     scoreChanged();
 }
+
+void Jeu::add_historique()
+{
+    int** tab2 = new int *[taille];
+    for (int i=0;i<taille;i++)
+    {
+        tab2[i]=new int[taille];
+    }
+    for (int i=0;i<taille;i++)
+    {
+        for (int j=0;j<taille;j++)
+        {
+            tab2[i][j]=tab[i][j];
+        }
+    }
+
+    historique.push_back(tab2);
+}
+
+
+void Jeu::cancel()
+{
+    int T = historique.size();
+    for (int i = 0 ; i < taille ; i++)
+        for (int j = 0 ; j < taille ; j++)
+            tab[i][j] = historique[T-1][i][j];
+/*
+    for (int i=0;i<taille;i++)
+        delete [] historique[T-1][i];
+    delete [] historique[T-1];*/
+
+
+    caseChanged();
+}
+
+
 
 bool Jeu::Cherche0()
 {
@@ -504,6 +542,7 @@ void Jeu::move_up()
     {
         MeilleurScore=Score;
     }
+    add_historique();
     caseChanged();
     scoreChanged();
 }
@@ -533,6 +572,7 @@ void Jeu::move_down()
     {
         MeilleurScore=Score;
     }
+    add_historique();
     caseChanged();
     scoreChanged();
 }
@@ -562,6 +602,7 @@ void Jeu::move_left()
     {
         MeilleurScore=Score;
     }
+    add_historique();
     caseChanged();
     scoreChanged();
 }
@@ -591,6 +632,7 @@ void Jeu::move_right()
     {
         MeilleurScore=Score;
     }
+    historique.push_back(tab);
     caseChanged();
     scoreChanged();
 }
