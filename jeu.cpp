@@ -109,10 +109,12 @@ void Jeu::nouvellePartie()
     Score = 0;
     caseAleatoire();
     caseAleatoire();
+    echec=false;
 
     add_historique();
     caseChanged();
     scoreChanged();
+    endChanged();
 }
 
 void Jeu::add_historique()
@@ -167,6 +169,8 @@ void Jeu::cancel()
     }
     caseChanged();
     scoreChanged();
+    echec=false;
+    endChanged();
 }
 
 
