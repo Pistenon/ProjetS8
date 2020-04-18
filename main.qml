@@ -1193,6 +1193,7 @@ Window {
         width: 189
         height: 49
         color: "#baae9f"
+        focus:true
 
         Text {
             id: element
@@ -1214,6 +1215,7 @@ Window {
             y: 0
             width: 189
             height: 49
+            onClicked: jeu.cancel()
         }
     }
 }
