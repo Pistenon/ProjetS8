@@ -34,6 +34,7 @@ public:
     Q_PROPERTY(QString case33 READ readCase33 NOTIFY caseChanged)
     Q_PROPERTY(QString score READ readScore NOTIFY scoreChanged)
     Q_PROPERTY(QString bestScore READ readBestScore NOTIFY scoreChanged)
+    Q_PROPERTY(QString end READ readEnd NOTIFY endChanged)
 
     QString readCase00();
     QString readCase01();
@@ -53,6 +54,7 @@ public:
     QString readCase33();
     QString readScore();
     QString readBestScore();
+    QString readEnd();
 
 
     Q_INVOKABLE void caseAleatoire();
@@ -74,6 +76,7 @@ public:
 signals:
     void caseChanged();
     void scoreChanged();
+    void endChanged();
 
 private:
     int **tab;
@@ -85,6 +88,7 @@ private:
     void FreeHistorique();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
     bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
+    bool Victoire(); // Permet de savoir quand la partie est gagnee
 };
 
 #endif // JEU_H
