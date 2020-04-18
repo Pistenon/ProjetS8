@@ -82,6 +82,7 @@ private:
     int MeilleurScore;
     vector<int**> historique; // Répertorie tous les coups joues
     void Free();
+    void FreeHistorique();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
     bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
 };
