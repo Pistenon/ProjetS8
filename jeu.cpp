@@ -928,6 +928,8 @@ void Jeu::stocker()
             }
         }
         StockerScore();
+        Stockerhistorique();
+        StockerhistoriqueScore();
     }
     else
     {
@@ -1040,8 +1042,47 @@ bool Jeu::TestFusion(int xi, int xj, vector<vector<int> > fusions)
     return test;
 }
 
+void Jeu::Stockerhistorique()
+{
+    string const nomFichier("historique.txt");
+    ofstream monFlux(nomFichier.c_str());
+    if (monFlux)
+    {
+        int T = historique.size();
+        for (int t=0;t<T;t++)
+        {
+            for (int i=0;i<taille;i++)
+            {
+                for (int j=0;j<taille;j++)
+                {
+                    monFlux << historique[t][i][j] << endl;
+                }
+            }
+        }
+    }
+    else
+    {
+        cout << "Erreur  : Impossible d'ouvrir le fichier historique en ecriture.";
+    }
+}
 
-
+void Jeu::StockerhistoriqueScore()
+{
+    string const nomFichier("historiquescore.txt");
+    ofstream monFlux(nomFichier.c_str());
+    if (monFlux)
+    {
+        int T = historiqueScore.size();
+        for (int t=0;t<T;t++)
+        {
+            monFlux << historiqueScore[t] << endl;
+        }
+    }
+    else
+    {
+        cout << "Erreur  : Impossible d'ouvrir le fichier historiquescore en ecriture.";
+    }
+}
 
 
 

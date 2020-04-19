@@ -77,6 +77,8 @@ public:
     void StockerScore();
     void DestockerScore();
     void RemiseZeroSauvegardes();
+    void Stockerhistorique();
+    void StockerhistoriqueScore();
 
 signals:
     void caseChanged();
