@@ -29,6 +29,8 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     else
     {
         DestockerScore();
+        cout << 1 << endl;
+        Destockerhistorique();
         RemiseZeroSauvegardes();
         MeilleurScore=Score;
     }
@@ -1084,7 +1086,67 @@ void Jeu::StockerhistoriqueScore()
     }
 }
 
+void Jeu::Destockerhistorique()
+{
+    ifstream fichier("historique.txt");
+    cout << "Destockerhistorique"<< endl;
+    if(fichier)
+    {
+        int** tab2 = new int *[taille];
+        for (int i=0;i<taille;i++)
+        {
+            tab2[i]=new int[taille];
+        }
+        string ligne;
+        int i=0;
+        int j=0;
+        while(getline(fichier, ligne))
+        {
+            int myint1 = std::stoi(ligne);
+            if (j<taille)
+            {
+                tab2[i][j]=myint1;
+            }
+            else
+            {
+                j=0;
+                i+=1;
+                if (i<taille)
+                {
+                    tab2[i][j]=myint1;
+                }
+                else
+                {
+                    historique.push_back(tab2);
+                    i=0;
+                    j=0;
+                    tab2[i][j]=myint1;
+                }
+            }
 
+            j+=1;
+        }
+        historique.push_back(tab2);
+        cout << historique.size() << endl;
+        int W=historique.size();
+        for (int w=0;w<W;w++)
+        {
+            for (int ii=0;ii<taille;ii++)
+            {
+                for (int jj=0;jj<taille;jj++)
+                {
+                    cout << historique[w][ii][jj] ;
+                }
+                cout << endl;
+            }
+            cout <<endl;
+        }
+     }
+     else
+     {
+        cout << "ERREUR: Impossible d'ouvrir le fichier historique en lecture." << endl;
+     }
+}
 
 
 
