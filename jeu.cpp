@@ -118,7 +118,7 @@ void Jeu::nouvellePartie()
     endChanged();
 }
 
-void Jeu::add_historique()
+void Jeu::add_historique() // permet de rajouter la grille en-cours à l'historique et le score actuel à l'historique
 {
     int** tab2 = new int *[taille];
     for (int i=0;i<taille;i++)
@@ -150,7 +150,7 @@ void Jeu::FreeHistorique()
 }
 
 
-void Jeu::cancel()
+void Jeu::cancel() //gère le retours d'un coups en arrière sur la grille
 {
     if (FIN==1)
     {
@@ -167,9 +167,9 @@ void Jeu::cancel()
             }
          }
 
-    historique.pop_back();
-    Score=historiqueScore[T-2];
-    historiqueScore.pop_back();
+    historique.pop_back(); //enlève de l'historique le coups
+    Score=historiqueScore[T-2]; // retours au précédent score
+    historiqueScore.pop_back(); // enlève de l'historique le coups
 
     }
     caseChanged();
@@ -180,7 +180,7 @@ void Jeu::cancel()
 
 
 
-bool Jeu::Cherche0()
+bool Jeu::Cherche0() //méthode permettant de chercher la précense d'un 0 sur la grille
 {
     for (int i=0;i<taille;i++)
     {
@@ -222,7 +222,8 @@ vector<vector<int>> Jeu::up()
                         {
                             if (TestFusion(i-(UP+1),j,fusions)) // la fusion est possible
                             {
-                                UP+=1;
+                                UP+=1; // on peut remonter d'un cran supplémentaire dans la grille par fusion
+                                //on collecte la fusion que l'on fait
                                 fusions.push_back(vector<int>(2));
                                 int t=fusions.size();
                                 fusions[t-1][0]=i-(UP);
@@ -233,9 +234,9 @@ vector<vector<int>> Jeu::up()
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
                 }
-                if (UP !=0)
+                if (UP !=0) //test si on monte la cas d'au moins un cran
                 {
-                    if (tab[i-UP][j]==tab[i][j])
+                    if (tab[i-UP][j]==tab[i][j]) //cas de la fusion
                     {
                         tab[i-UP][j]=2*tab[i-UP][j];
                         tab[i][j]=0;
@@ -250,7 +251,7 @@ vector<vector<int>> Jeu::up()
                     }
                     else
                     {
-                        tab[i-UP][j]=tab[i][j];
+                        tab[i-UP][j]=tab[i][j]; // on remonte la cas
                         tab[i][j]=0;
                         CHANGEMENT.push_back(vector<int>(5));
                         int s=CHANGEMENT.size();
@@ -302,7 +303,8 @@ vector<vector<int>> Jeu::down()
                         {
                             if (TestFusion(i+(DOWN+1),j,fusions)) // la fusion est possible
                             {
-                                DOWN+=1;
+                                DOWN+=1; //on fait la fusion
+                                //on collecte la fusion
                                 fusions.push_back(vector<int>(2));
                                 int t=fusions.size();
                                 fusions[t-1][0]=i+(DOWN);
@@ -312,9 +314,9 @@ vector<vector<int>> Jeu::down()
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
                 }
-                if (DOWN !=0)
+                if (DOWN !=0) //test si on descend d'au moins une case
                 {
-                    if (tab[i+DOWN][j]==tab[i][j])
+                    if (tab[i+DOWN][j]==tab[i][j]) //cas de la fusion
                     {
                         tab[i+DOWN][j]=2*tab[i+DOWN][j];
                         tab[i][j]=0;
@@ -327,7 +329,7 @@ vector<vector<int>> Jeu::down()
                         CHANGEMENT[s-1][4]=tab[i+DOWN][j];
                         Score+=tab[i+DOWN][j];
                     }
-                    else
+                    else //cas de la simple descente
                     {
                         tab[i+DOWN][j]=tab[i][j];
                         tab[i][j]=0;
@@ -379,7 +381,8 @@ vector<vector<int>> Jeu::left()
                         {
                             if (TestFusion(i,j-(LEFT+1),fusions)) // la fusion est possible
                             {
-                                LEFT+=1;
+                                LEFT+=1; //on fait la fusion
+                                //on collecte la fusion
                                 fusions.push_back(vector<int>(2));
                                 int t=fusions.size();
                                 fusions[t-1][0]=i;
@@ -389,9 +392,9 @@ vector<vector<int>> Jeu::left()
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
                 }
-                if (LEFT !=0)
+                if (LEFT !=0) //test si on se décalle au moins une fois à gauche
                 {
-                    if (tab[i][j-LEFT]==tab[i][j])
+                    if (tab[i][j-LEFT]==tab[i][j]) //cas de la fusion
                     {
                         tab[i][j-LEFT]=2*tab[i][j];
                         tab[i][j]=0;
@@ -404,7 +407,7 @@ vector<vector<int>> Jeu::left()
                         CHANGEMENT[s-1][4]=tab[i][j-LEFT];
                         Score+=tab[i][j-LEFT];
                     }
-                    else
+                    else //cas du simple décallage
                     {
                         tab[i][j-LEFT]=tab[i][j];
                         tab[i][j]=0;
@@ -456,7 +459,8 @@ vector<vector<int>> Jeu::right()
                         {
                             if (TestFusion(i,j+(RIGHT+1),fusions)) // la fusion est possible
                             {
-                                RIGHT+=1;
+                                RIGHT+=1; //on fait la fusion
+                                // on collecte la fusion
                                 fusions.push_back(vector<int>(2));
                                 int t=fusions.size();
                                 fusions[t-1][0]=i;
@@ -466,9 +470,9 @@ vector<vector<int>> Jeu::right()
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
                 }
-                if (RIGHT !=0)
+                if (RIGHT !=0) //test si on se décalle au moins une fois à droite
                 {
-                    if (tab[i][j+RIGHT]==tab[i][j])
+                    if (tab[i][j+RIGHT]==tab[i][j]) //cas de la fusion
                     {
                         tab[i][j+RIGHT]=2*tab[i][j];
                         tab[i][j]=0;
@@ -481,7 +485,7 @@ vector<vector<int>> Jeu::right()
                         CHANGEMENT[s-1][4]=tab[i][j+RIGHT];
                         Score+=tab[i][j+RIGHT];
                     }
-                    else
+                    else //cas du simple décallage
                     {
                         tab[i][j+RIGHT]=tab[i][j];
                         tab[i][j]=0;
@@ -530,12 +534,12 @@ void Jeu::move_up()
             tab[a][b] = 0;
             tab[an][bn] = val;
         }
-        if (CHANGEMENT[N-1][0] == 1)
+        if (CHANGEMENT[N-1][0] == 1) //test si on peut rajouter une case aléatoire
         {
             caseAleatoire();
         }
     }
-    if (Score>MeilleurScore)
+    if (Score>MeilleurScore) //actualisation du score
     {
         MeilleurScore=Score;
     }
@@ -564,12 +568,12 @@ void Jeu::move_down()
             tab[a][b] = 0;
             tab[an][bn] = val;
         }
-        if (CHANGEMENT[N-1][0] == 1)
+        if (CHANGEMENT[N-1][0] == 1) //test si on peut rajouter une case aléatoire
         {
             caseAleatoire();
         }
     }
-    if (Score>MeilleurScore)
+    if (Score>MeilleurScore) //actualisation du meilleur score
     {
         MeilleurScore=Score;
     }
@@ -598,12 +602,12 @@ void Jeu::move_left()
             tab[a][b] = 0;
             tab[an][bn] = val;
         }
-        if (CHANGEMENT[N-1][0] == 1)
+        if (CHANGEMENT[N-1][0] == 1) //test s'il reste une case vide au moins
         {
             caseAleatoire();
         }
     }
-    if (Score>MeilleurScore)
+    if (Score>MeilleurScore) //on actualise le meilleur score
     {
         MeilleurScore=Score;
     }
@@ -632,12 +636,12 @@ void Jeu::move_right()
             tab[a][b] = 0;
             tab[an][bn] = val;
         }
-        if (CHANGEMENT[N-1][0] == 1)
+        if (CHANGEMENT[N-1][0] == 1) //test la précense d'une case vide
         {
             caseAleatoire();
         }
     }
-    if (Score>MeilleurScore)
+    if (Score>MeilleurScore) //Actualisation du meilleur score
     {
         MeilleurScore=Score;
     }
@@ -802,7 +806,7 @@ QString Jeu::readEnd()
 }
 
 
-bool Jeu::Victoire()
+bool Jeu::Victoire() //test si la victoire est atteinte : ici on gagne dès que l'on atteint le 2048
 {
     bool ans = false;
     for (int i=0;i<taille;i++)
@@ -819,7 +823,7 @@ bool Jeu::Victoire()
     return ans;
 }
 
-bool Jeu::GameOver()
+bool Jeu::GameOver()//test si on a perdu : plus aucune case de vide, et plus aucune fusion de possible
 {
     bool ans = false;
     if (Cherche0()==false) // Dans le cas ou aucune case n'est vide, on regarde si deux cases peuvent fusionner entre elles ou non. Si non, la partie est perdue
@@ -850,19 +854,20 @@ bool Jeu::GameOver()
 
 
 
-void Jeu::stocker()
+void Jeu::stocker() //permet de gérer le stockage sur le disque l'état du jeu actuel
 {
-    string const nomFichier("damier.txt");
+    string const nomFichier("damier.txt"); //document stockant le tableau actuel
     ofstream monFlux(nomFichier.c_str());
-    if (monFlux)
+    if (monFlux) //test si on a eu un problème à l'ouverture
     {
-        for (int i=0;i<taille;i++)
+        for (int i=0;i<taille;i++) // on stocke chaque valeur de la table sur une ligne
         {
             for (int j=0;j<taille;j++)
             {
                 monFlux << tab[i][j] << endl;
             }
         }
+        //Appel des autres méthodes de stockage de la partie actuelle
         StockerScore();
         Stockerhistorique();
         StockerhistoriqueScore();
@@ -873,7 +878,7 @@ void Jeu::stocker()
     }
 }
 
-void Jeu::reconstruire()
+void Jeu::reconstruire() //permet de reconstruire le tableau à partir du document stocké
 {
     ifstream fichier("damier.txt");
 
@@ -883,11 +888,11 @@ void Jeu::reconstruire()
         string ligne;
         int i=0;
         int j=0;
-        while(getline(fichier, ligne))
+        while(getline(fichier, ligne)) // chaque valeur étant stocker sur une ligne, on gère ligne après ligne
         {
             if (j<taille)
             {
-                int myint1 = std::stoi(ligne);
+                int myint1 = std::stoi(ligne); //transformation du string en entier pour pouvoir le mettre dans le damier
                 tab[i][j]=myint1;
                 j+=1;
             }
@@ -901,7 +906,7 @@ void Jeu::reconstruire()
             }
 
          }
-        if (i!=0)
+        if (i!=0) //test si le document contenait bien quelque chose, si oui, on peut déstocker la suite
         {
             DestockerScore();
             Destockerhistorique();
@@ -915,9 +920,9 @@ void Jeu::reconstruire()
 
 }
 
-void Jeu::StockerScore()
+void Jeu::StockerScore() //permet de stocker le score actuel
 {
-    string const nomFichier("score.txt");
+    string const nomFichier("score.txt"); //document stockant le score actuel
     ofstream monFlux(nomFichier.c_str());
     if (monFlux)
     {
@@ -929,7 +934,7 @@ void Jeu::StockerScore()
     }
 }
 
-void Jeu::DestockerScore()
+void Jeu::DestockerScore() //permet de déstocker le score
 {
     ifstream fichier("score.txt");
 
@@ -938,7 +943,7 @@ void Jeu::DestockerScore()
         string ligne;
         while(getline(fichier, ligne))
         {
-            int myint1 = std::stoi(ligne);
+            int myint1 = std::stoi(ligne); //transformation de la chaine de caractère en entier
             Score=myint1;
         }
      }
@@ -949,7 +954,7 @@ void Jeu::DestockerScore()
 
 }
 
-void Jeu::RemiseZeroSauvegardes()
+void Jeu::RemiseZeroSauvegardes() //permet d'effacer tout les documents
 {
     string const nomFichier("damier.txt");
     ofstream monFlux(nomFichier.c_str());
@@ -965,15 +970,17 @@ void Jeu::RemiseZeroSauvegardes()
     monFlux2.close();
 }
 
-bool Jeu::TestFusion(int xi, int xj, vector<vector<int> > fusions)
+bool Jeu::TestFusion(int xi, int xj, vector<vector<int> > fusions) //permet de tester si une fusion est possible dans le sens que l'on ne peut fusionner qu'une seule fois par enclenchement de mouvement
 {
+    //xi,xj donnent les coordonnées de la case d'arrivé à tester
+    // fusions est une liste de liste comportant toute les fusions qui ont dééjà été faite dans ce mouvement
     bool test=true;
     int N = fusions.size();
     for (int i=0;i<N;i++)
     {
         if (fusions[i][0]==xi)
         {
-            if (fusions[i][1]==xj)
+            if (fusions[i][1]==xj) // on a trouvé que la case xi,xj a déjà fait une fusion
             {
                test=false;
                 return test;
@@ -983,9 +990,9 @@ bool Jeu::TestFusion(int xi, int xj, vector<vector<int> > fusions)
     return test;
 }
 
-void Jeu::Stockerhistorique()
+void Jeu::Stockerhistorique() // permet de stocker l'historique sur le disque pour une reprise plus tard
 {
-    string const nomFichier("historique.txt");
+    string const nomFichier("historique.txt"); //fichier contenant tout l'historique
     ofstream monFlux(nomFichier.c_str());
     if (monFlux)
     {
@@ -996,7 +1003,7 @@ void Jeu::Stockerhistorique()
             {
                 for (int j=0;j<taille;j++)
                 {
-                    monFlux << historique[t][i][j] << endl;
+                    monFlux << historique[t][i][j] << endl; // on stocke une valeur par ligne
                 }
             }
         }
@@ -1007,16 +1014,16 @@ void Jeu::Stockerhistorique()
     }
 }
 
-void Jeu::StockerhistoriqueScore()
+void Jeu::StockerhistoriqueScore() //permet de stocker l'historique des scores
 {
-    string const nomFichier("historiquescore.txt");
+    string const nomFichier("historiquescore.txt"); // document texte contenant l'historique des scores
     ofstream monFlux(nomFichier.c_str());
     if (monFlux)
     {
         int T = historiqueScore.size();
         for (int t=0;t<T;t++)
         {
-            monFlux << historiqueScore[t] << endl;
+            monFlux << historiqueScore[t] << endl; // on stocke une valeur par ligne
         }
     }
     else
@@ -1025,7 +1032,7 @@ void Jeu::StockerhistoriqueScore()
     }
 }
 
-void Jeu::Destockerhistorique()
+void Jeu::Destockerhistorique() //permet de récupérer l'historique tester
 {
     FreeHistorique(); //On efface l'historique de la partie en cours
 
@@ -1041,10 +1048,10 @@ void Jeu::Destockerhistorique()
         string ligne;
         int i=0;
         int j=0;
-        while(getline(fichier, ligne))
+        while(getline(fichier, ligne)) // on récupére les données lignes à lignes
         {
 
-            int myint1 = std::stoi(ligne);
+            int myint1 = std::stoi(ligne); // transformation de la chaîne de caractère en entier
             if (j<taille)
             {
                 tab2[i][j]=myint1;
@@ -1057,7 +1064,7 @@ void Jeu::Destockerhistorique()
                 {
                     tab2[i][j]=myint1;
                 }
-                else
+                else // on a obtenu une grille entière, on la stocke donc dans l'historique par copie
                 {
                     int** tab3 = new int *[taille];
                     for (int i=0;i<taille;i++)
