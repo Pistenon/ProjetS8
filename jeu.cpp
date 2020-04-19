@@ -1132,25 +1132,30 @@ void Jeu::Destockerhistorique()
             j+=1;
         }
         historique.push_back(tab2);
-        cout << historique.size() << endl;
-        int W=historique.size();
-        for (int w=0;w<W;w++)
-        {
-            for (int ii=0;ii<taille;ii++)
-            {
-                for (int jj=0;jj<taille;jj++)
-                {
-                    cout << historique[w][ii][jj] ;
-                }
-                cout << endl;
-            }
-            cout <<endl;
-        }
      }
      else
      {
         cout << "ERREUR: Impossible d'ouvrir le fichier historique en lecture." << endl;
      }
+
+
+    //Destockage historique score
+    ifstream fichier2("historiquescore.txt");
+    if(fichier2)
+    {
+        string ligne;
+        while(getline(fichier, ligne))
+        {
+            int myint1 = std::stoi(ligne);
+            int s = myint1;
+            historiqueScore.push_back(s);
+        }
+    }
+    else
+    {
+       cout << "ERREUR: Impossible d'ouvrir le fichier historiquescore en lecture." << endl;
+    }
+
 }
 
 
