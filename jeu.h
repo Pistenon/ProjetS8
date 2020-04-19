@@ -74,10 +74,6 @@ public:
     vector<vector<int>> down();
     vector<vector<int>> left();
     vector<vector<int>> right();
-    bool check_up();
-    bool check_down();
-    bool check_right();
-    bool check_left();
     void StockerScore();
     void DestockerScore();
     void RemiseZeroSauvegardes();
