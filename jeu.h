@@ -80,7 +80,6 @@ public:
     void Stockerhistorique();
     void StockerhistoriqueScore();
     void Destockerhistorique();
-    void DestockerhistoriqueScore();
 
 signals:
     void caseChanged();
