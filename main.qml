@@ -6,7 +6,7 @@ import QtQuick.Dialogs 1.2
 Window {
     visible: true
     width: 600
-    height: 600
+    height: 700
     color: "#faf8ef"
     title: qsTr("2048")
 
@@ -1464,59 +1464,6 @@ Window {
         }
     }
 
-    Rectangle {
-        id: rectangle1
-        x: 100
-        y: 528
-        width: 191
-        height: 50
-        color: "#baae9f"
-        focus: true
-        Keys.onPressed: {
-            switch (event.key) {
-            case Qt.Key_Up:
-                jeu.move_up();
-                break;
-            case Qt.Key_Down:
-                jeu.move_down();
-                break;
-            case Qt.Key_Left:
-                jeu.move_left();
-                break;
-            case Qt.Key_Right:
-                jeu.move_right();
-                break;
-            }
-        }
-
-
-
-
-        TextInput {
-            id: nouvellePartie
-            x: 0
-            y: 0
-            width: 191
-            height: 50
-            color: "#ecded3"
-            text: "Recommencer"
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-            font.family: "Verdana"
-            font.pixelSize: 25
-
-        }
-
-        MouseArea {
-            id: mouseArea
-            x: 0
-            y: 0
-            width: 191
-            height: 50
-            onClicked: jeu.nouvellePartie()
-        }
-    }
-
     Text {
         id: titre
         x: 96
@@ -1607,39 +1554,6 @@ Window {
     }
 
     Rectangle {
-        id: rectangle2
-        x: 311
-        y: 529
-        width: 189
-        height: 49
-        color: "#baae9f"
-        focus:true
-
-        Text {
-            id: element
-            x: 0
-            y: 0
-            width: 189
-            height: 49
-            color: "#ecded3"
-            text: qsTr("Annuler coup")
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-            font.family: "Verdana"
-            font.pixelSize: 25
-        }
-
-        MouseArea {
-            id: mouseArea1
-            x: 0
-            y: 0
-            width: 189
-            height: 49
-            onClicked: jeu.cancel()
-        }
-    }
-
-    Rectangle {
         id: ecranFin
         x: 100
         y: 100
@@ -1683,30 +1597,162 @@ Window {
         }
     }
 
-    Rectangle {
-        id: save
-        x: 5
-        y: 528
-        width: 89
-        height: 50
-        color: "#baae9f"
-
-        Text {
-            id: element1
-            x: 0
-            y: 9
-            color: "#ecded3"
-            text: qsTr("Sauver")
-            font.family: "Verdana"
-            font.pixelSize: 25
+    FocusScope {
+        id: focusScope
+        x: 60
+        y: 511
+        width: 459
+        height: 161
+        focus:true
+        Keys.onPressed: {
+            switch (event.key) {
+            case Qt.Key_Up:
+                jeu.move_up();
+                break;
+            case Qt.Key_Down:
+                jeu.move_down();
+                break;
+            case Qt.Key_Left:
+                jeu.move_left();
+                break;
+            case Qt.Key_Right:
+                jeu.move_right();
+                break;
+            }
         }
 
-        MouseArea {
-            id: mouseAreaSauver
-            width: 89
+        Rectangle {
+            id: save
+            x: 40
+            y: 86
+            width: 191
             height: 50
-            onClicked: jeu.stocker()
+            color: "#baae9f"
+
+            Text {
+                id: element1
+                x: 0
+                y: 0
+                width: 191
+                height: 50
+                color: "#ecded3"
+                text: qsTr("Sauver")
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.family: "Verdana"
+                font.pixelSize: 25
+            }
+
+            MouseArea {
+                id: mouseAreaSauver
+                x: 0
+                y: 0
+                width: 191
+                height: 50
+                onClicked: jeu.stocker()
+            }
         }
+
+        Rectangle {
+            id: rectangle1
+            x: 40
+            y: 17
+            width: 191
+            height: 50
+            color: "#baae9f"
+
+
+
+
+
+            TextInput {
+                id: nouvellePartie
+                x: 0
+                y: 0
+                width: 191
+                height: 50
+                color: "#ecded3"
+                text: "Recommencer"
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.family: "Verdana"
+                font.pixelSize: 25
+
+            }
+
+            MouseArea {
+                id: mouseArea
+                x: 0
+                y: 0
+                width: 191
+                height: 50
+                onClicked: jeu.nouvellePartie()
+            }
+        }
+
+        Rectangle {
+            id: rectangle2
+            x: 251
+            y: 18
+            width: 189
+            height: 49
+            color: "#baae9f"
+
+            Text {
+                id: element
+                x: 0
+                y: 0
+                width: 189
+                height: 49
+                color: "#ecded3"
+                text: qsTr("Annuler coup")
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.family: "Verdana"
+                font.pixelSize: 25
+            }
+
+            MouseArea {
+                id: mouseArea1
+                x: 0
+                y: 0
+                width: 189
+                height: 49
+                onClicked: jeu.cancel()
+            }
+        }
+
+        Rectangle {
+            id: charger
+            x: 251
+            y: 86
+            width: 196
+            height: 50
+            color: "#baae9f"
+            Text {
+                id: element2
+                x: 0
+                y: 0
+                width: 196
+                height: 50
+                color: "#ecded3"
+                text: qsTr("Charger")
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 25
+                font.family: "Verdana"
+            }
+
+            MouseArea {
+                id: mouseAreaSauver1
+                x: 0
+                y: 0
+                width: 196
+                height: 50
+            }
+        }
+
+
     }
 
 
