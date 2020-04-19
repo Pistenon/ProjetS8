@@ -74,6 +74,10 @@ public:
     vector<vector<int>> down();
     vector<vector<int>> left();
     vector<vector<int>> right();
+    bool check_up();
+    bool check_down();
+    bool check_right();
+    bool check_left();
     void StockerScore();
     void DestockerScore();
     void RemiseZeroSauvegardes();
@@ -94,12 +98,12 @@ private:
     int FIN;
     vector<int**> historique; // Répertorie tous les coups joues
     vector<int> historiqueScore; //Répertorie le score total apres chaque coup
-    bool echec; //Indique que la partie est perdue
     void Free();
     void FreeHistorique();
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
     bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
     bool Victoire(); // Permet de savoir quand la partie est gagnee
+    bool GameOver();
     bool TestFusion(int xi,int xj,vector<vector<int>> fusions); //permet de savoir si une case a déjà été fusionné au préalable (une case ne peut fusionner qu'une unique fois)
 };
 
