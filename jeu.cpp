@@ -211,6 +211,7 @@ vector<vector<int>> Jeu::up()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
+    vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int i=1;i<taille;i++)
     {
         for (int j=0;j<taille;j++)
@@ -229,7 +230,15 @@ vector<vector<int>> Jeu::up()
                     {
                         if (tab[i-(UP+1)][j]==tab[i][j])
                         {
-                            UP+=1;
+                            if (TestFusion(i-(UP+1),j,fusions)) // la fusion est possible
+                            {
+                                UP+=1;
+                                fusions.push_back(vector<int>(2));
+                                int t=fusions.size();
+                                fusions[t-1][0]=i-(UP);
+                                fusions[t-1][1]=j;
+                            }
+
                         }
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
@@ -299,6 +308,7 @@ vector<vector<int>> Jeu::down()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
+    vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int i=taille-2;i>-1;i--)
     {
         for (int j=0;j<taille;j++)
@@ -317,7 +327,14 @@ vector<vector<int>> Jeu::down()
                     {
                         if (tab[i+(DOWN+1)][j]==tab[i][j])
                         {
-                            DOWN+=1;
+                            if (TestFusion(i+(DOWN+1),j,fusions)) // la fusion est possible
+                            {
+                                DOWN+=1;
+                                fusions.push_back(vector<int>(2));
+                                int t=fusions.size();
+                                fusions[t-1][0]=i+(DOWN);
+                                fusions[t-1][1]=j;
+                            }
                         }
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
@@ -385,6 +402,7 @@ vector<vector<int>> Jeu::left()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
+    vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int j=1;j<taille;j++)
     {
         for (int i=0;i<taille;i++)
@@ -403,7 +421,14 @@ vector<vector<int>> Jeu::left()
                     {
                         if (tab[i][j-(LEFT+1)]==tab[i][j])
                         {
-                            LEFT+=1;
+                            if (TestFusion(i,j-(LEFT+1),fusions)) // la fusion est possible
+                            {
+                                LEFT+=1;
+                                fusions.push_back(vector<int>(2));
+                                int t=fusions.size();
+                                fusions[t-1][0]=i;
+                                fusions[t-1][1]=j-(LEFT);
+                            }
                         }
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
@@ -471,6 +496,7 @@ vector<vector<int>> Jeu::right()
 {
     bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
+    vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int j=taille-2;j>-1;j--)
     {
         for (int i=0;i<taille;i++)
@@ -489,7 +515,14 @@ vector<vector<int>> Jeu::right()
                     {
                         if (tab[i][j+(RIGHT+1)]==tab[i][j])
                         {
-                            RIGHT+=1;
+                            if (TestFusion(i,j+(RIGHT+1),fusions)) // la fusion est possible
+                            {
+                                RIGHT+=1;
+                                fusions.push_back(vector<int>(2));
+                                int t=fusions.size();
+                                fusions[t-1][0]=i;
+                                fusions[t-1][1]=j+(RIGHT);
+                            }
                         }
                         test=false; //On a rencontré une case non vide, donc on sort de la boucle
                     }
@@ -988,3 +1021,36 @@ void Jeu::RemiseZeroSauvegardes()
     ofstream monFlux2(nomFichier2.c_str());
     monFlux2.close();
 }
+
+bool Jeu::TestFusion(int xi, int xj, vector<vector<int> > fusions)
+{
+    bool test=true;
+    int N = fusions.size();
+    for (int i=0;i<N;i++)
+    {
+        if (fusions[i][0]==xi)
+        {
+            if (fusions[i][1]==xj)
+            {
+               test=false;
+                return test;
+            }
+        }
+    }
+    return test;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
