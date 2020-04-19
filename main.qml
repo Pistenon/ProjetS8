@@ -1749,6 +1749,7 @@ Window {
                 y: 0
                 width: 196
                 height: 50
+                onClicked: jeu.reconstruire()
             }
         }
 
