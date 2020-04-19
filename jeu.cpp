@@ -1010,6 +1010,12 @@ void Jeu::RemiseZeroSauvegardes()
     string const nomFichier2("score.txt");
     ofstream monFlux2(nomFichier2.c_str());
     monFlux2.close();
+    string const nomFichier3("historique.txt");
+    ofstream monFlux3(nomFichier3.c_str());
+    monFlux2.close();
+    string const nomFichier4("historiquescore.txt");
+    ofstream monFlux4(nomFichier4.c_str());
+    monFlux2.close();
 }
 
 bool Jeu::TestFusion(int xi, int xj, vector<vector<int> > fusions)
@@ -1074,8 +1080,8 @@ void Jeu::StockerhistoriqueScore()
 
 void Jeu::Destockerhistorique()
 {
+    FreeHistorique();
     ifstream fichier("historique.txt");
-    cout << "Destockerhistorique"<< endl;
     if(fichier)
     {
         int** tab2 = new int *[taille];
@@ -1088,6 +1094,7 @@ void Jeu::Destockerhistorique()
         int j=0;
         while(getline(fichier, ligne))
         {
+
             int myint1 = std::stoi(ligne);
             if (j<taille)
             {
@@ -1103,7 +1110,19 @@ void Jeu::Destockerhistorique()
                 }
                 else
                 {
-                    historique.push_back(tab2);
+                    int** tab3 = new int *[taille];
+                    for (int i=0;i<taille;i++)
+                    {
+                        tab3[i]=new int[taille];
+                    }
+                    for (int i=0;i<taille;i++)
+                    {
+                        for (int j=0;j<taille;j++)
+                        {
+                            tab3[i][j]=tab2[i][j];
+                        }
+                    }
+                    historique.push_back(tab3);
                     i=0;
                     j=0;
                     tab2[i][j]=myint1;
