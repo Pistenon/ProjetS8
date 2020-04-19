@@ -15,7 +15,6 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
 {
     tab = nullptr;
     taille = tailletableau;
-    Score = 0;
     MeilleurScore=0;
 
     Init();
@@ -43,6 +42,7 @@ void Jeu::Init()
         }
     }
     FIN=0;
+    Score=0;
 
 
 }
@@ -83,7 +83,7 @@ void Jeu::caseAleatoire()
         }
     }
 
-
+    // Choix d'une case vide aleatoirement
     int t=casesVides.size();
     int a = rand()%t;
     int n = rand()%4;
@@ -109,7 +109,6 @@ void Jeu::nouvellePartie()
     Free();
     FreeHistorique();
     Init();
-    Score = 0;
     caseAleatoire();
     caseAleatoire();
 
@@ -201,7 +200,6 @@ bool Jeu::Cherche0()
 
 vector<vector<int>> Jeu::up()
 {
-    bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int i=1;i<taille;i++)
@@ -237,7 +235,6 @@ vector<vector<int>> Jeu::up()
                 }
                 if (UP !=0)
                 {
-                    Changement=true;
                     if (tab[i-UP][j]==tab[i][j])
                     {
                         tab[i-UP][j]=2*tab[i-UP][j];
@@ -268,28 +265,14 @@ vector<vector<int>> Jeu::up()
             }
         }
     }
-    if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
+    if (Cherche0())
     {
-        if (Cherche0())
-        {
-            CHANGEMENT.push_back(vector<int>(1,1));
-        }
-        else
-        {
-            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-        }
+        CHANGEMENT.push_back(vector<int>(1,1));
     }
     else
-        {
-            if (Cherche0())
-            {
-                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
-            }
-            else {
-                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-
-            }
-        }
+    {
+        CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+    }
     return CHANGEMENT;
 }
 
@@ -297,7 +280,6 @@ vector<vector<int>> Jeu::up()
 
 vector<vector<int>> Jeu::down()
 {
-    bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int i=taille-2;i>-1;i--)
@@ -332,7 +314,6 @@ vector<vector<int>> Jeu::down()
                 }
                 if (DOWN !=0)
                 {
-                    Changement=true;
                     if (tab[i+DOWN][j]==tab[i][j])
                     {
                         tab[i+DOWN][j]=2*tab[i+DOWN][j];
@@ -363,35 +344,19 @@ vector<vector<int>> Jeu::down()
             }
         }
     }
-    if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
+    if (Cherche0())
     {
-        if (Cherche0())
-        {
-            CHANGEMENT.push_back(vector<int>(1,1));
-        }
-        else
-        {
-            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-
-        }
+        CHANGEMENT.push_back(vector<int>(1,1));
     }
     else
-        {
-            if (Cherche0())
-            {
-                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
-            }
-            else {
-                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-
-            }
-        }
+    {
+        CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+    }
     return CHANGEMENT;
 }
 
 vector<vector<int>> Jeu::left()
 {
-    bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int j=1;j<taille;j++)
@@ -426,7 +391,6 @@ vector<vector<int>> Jeu::left()
                 }
                 if (LEFT !=0)
                 {
-                    Changement=true;
                     if (tab[i][j-LEFT]==tab[i][j])
                     {
                         tab[i][j-LEFT]=2*tab[i][j];
@@ -457,35 +421,19 @@ vector<vector<int>> Jeu::left()
             }
         }
     }
-    if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
+    if (Cherche0())
     {
-        if (Cherche0())
-        {
-            CHANGEMENT.push_back(vector<int>(1,1));
-        }
-        else
-        {
-            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-
-        }
+        CHANGEMENT.push_back(vector<int>(1,1));
     }
     else
-        {
-            if (Cherche0())
-            {
-                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
-            }
-            else {
-                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-
-            }
-        }
+    {
+        CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+    }
     return CHANGEMENT;
 }
 
 vector<vector<int>> Jeu::right()
 {
-    bool Changement=false ; // Permet de savoir si un seul changement a été fait dans la grille
     vector<vector<int>> CHANGEMENT; // Permet de collecter tout les changements sur la grille pour l'affichage graphique
     vector<vector<int>> fusions; //Permet de collecter toutes les fusions
     for (int j=taille-2;j>-1;j--)
@@ -520,7 +468,6 @@ vector<vector<int>> Jeu::right()
                 }
                 if (RIGHT !=0)
                 {
-                    Changement=true;
                     if (tab[i][j+RIGHT]==tab[i][j])
                     {
                         tab[i][j+RIGHT]=2*tab[i][j];
@@ -551,29 +498,14 @@ vector<vector<int>> Jeu::right()
             }
         }
     }
-    if (Changement) // Si la grille n'a pas changé suite au mouvement, on ne rajoute pas de case aléatoire
+    if (Cherche0())
     {
-        if (Cherche0())
-        {
-            CHANGEMENT.push_back(vector<int>(1,1));
-        }
-        else
-        {
-            CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-
-        }
+        CHANGEMENT.push_back(vector<int>(1,1));
     }
     else
-        {
-            if (Cherche0())
-            {
-                CHANGEMENT.push_back(vector<int>(1,1)); //la partie peut continuer car il reste un 0
-            }
-            else {
-                CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-
-            }
-        }
+    {
+        CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
+    }
     return CHANGEMENT;
 }
 
@@ -582,7 +514,7 @@ vector<vector<int>> Jeu::right()
 
 void Jeu::move_up()
 {
-    if (FIN==0)
+    if (FIN==0)  // Les cases ne peuvent bouger que si la partie n'est ni gagnee ni perdue
     {
     vector<vector<int>> CHANGEMENT = up();
     if (CHANGEMENT[0].size()>1)
@@ -715,24 +647,6 @@ void Jeu::move_right()
     endChanged();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -908,7 +822,7 @@ bool Jeu::Victoire()
 bool Jeu::GameOver()
 {
     bool ans = false;
-    if (Cherche0()==false)
+    if (Cherche0()==false) // Dans le cas ou aucune case n'est vide, on regarde si deux cases peuvent fusionner entre elles ou non. Si non, la partie est perdue
     {
         ans = true;
         for (int i=1;i<taille;i++)
@@ -991,7 +905,7 @@ void Jeu::reconstruire()
         {
             DestockerScore();
             Destockerhistorique();
-            RemiseZeroSauvegardes();
+            RemiseZeroSauvegardes(); //Une fois la partie chargee, on efface la sauvegarde
             caseChanged();
             scoreChanged();
             endChanged();
@@ -1113,7 +1027,9 @@ void Jeu::StockerhistoriqueScore()
 
 void Jeu::Destockerhistorique()
 {
-    FreeHistorique();
+    FreeHistorique(); //On efface l'historique de la partie en cours
+
+    //Destockage de l'historique
     ifstream fichier("historique.txt");
     if(fichier)
     {
