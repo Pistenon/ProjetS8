@@ -959,13 +959,18 @@ void Jeu::reconstruire()
             }
 
          }
+        if (i!=0)
+        {
+            DestockerScore();
+            Destockerhistorique();
+            RemiseZeroSauvegardes();
+            caseChanged();
+            scoreChanged();
+            endChanged();
+        }
+
      }
-    DestockerScore();
-    Destockerhistorique();
-    RemiseZeroSauvegardes();
-    caseChanged();
-    scoreChanged();
-    endChanged();
+
 }
 
 void Jeu::StockerScore()
