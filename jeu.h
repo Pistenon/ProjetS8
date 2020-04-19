@@ -99,7 +99,7 @@ private:
     int NbreAlea(); // Permet de renvoyer un nombre aléatoire n'excédant pas une certaine borne
     bool Cherche0(); // Permet de cherche s'il reste une place de libre dans le tableau
     bool Victoire(); // Permet de savoir quand la partie est gagnee
-    bool GameOver();
+    bool GameOver(); // Permet de savoir quand la partie est perdue
     bool TestFusion(int xi,int xj,vector<vector<int>> fusions); //permet de savoir si une case a déjà été fusionné au préalable (une case ne peut fusionner qu'une unique fois)
 };
 
