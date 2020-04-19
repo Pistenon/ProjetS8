@@ -20,20 +20,9 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     echec=false;
 
     Init();
-    int test=Reconstruire();
-    if (test==0)
-    {
-        caseAleatoire();
-        caseAleatoire();
-    }
-    else
-    {
-        DestockerScore();
-        cout << 1 << endl;
-        Destockerhistorique();
-        RemiseZeroSauvegardes();
-        MeilleurScore=Score;
-    }
+    caseAleatoire();
+    caseAleatoire();
+
     add_historique();
 
 }
@@ -916,6 +905,9 @@ bool Jeu::Victoire()
     return ans;
 }
 
+
+
+
 void Jeu::stocker()
 {
     string const nomFichier("damier.txt");
@@ -939,7 +931,7 @@ void Jeu::stocker()
     }
 }
 
-int Jeu::Reconstruire()
+void Jeu::reconstruire()
 {
     ifstream fichier("damier.txt");
 
@@ -967,19 +959,13 @@ int Jeu::Reconstruire()
             }
 
          }
-        if (i!=taille-1)
-        {
-            return 0;
-        }
-        else
-        {
-            return 1;
-        }
      }
-     else
-     {
-        return 0;
-     }
+    DestockerScore();
+    Destockerhistorique();
+    RemiseZeroSauvegardes();
+    caseChanged();
+    scoreChanged();
+    endChanged();
 }
 
 void Jeu::StockerScore()
