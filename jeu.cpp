@@ -17,7 +17,6 @@ Jeu::Jeu(int tailletableau,QObject *parent) : QObject(parent)
     taille = tailletableau;
     Score = 0;
     MeilleurScore=0;
-    echec=false;
 
     Init();
     caseAleatoire();
@@ -44,6 +43,8 @@ void Jeu::Init()
         }
     }
     FIN=0;
+
+
 }
 
 
@@ -111,7 +112,6 @@ void Jeu::nouvellePartie()
     Score = 0;
     caseAleatoire();
     caseAleatoire();
-    echec=false;
 
     add_historique();
     caseChanged();
@@ -174,8 +174,7 @@ void Jeu::cancel()
 
     }
     caseChanged();
-    scoreChanged();
-    echec=false;
+    scoreChanged();    
     endChanged();
 
 }
@@ -196,6 +195,146 @@ bool Jeu::Cherche0()
     }
     return false;
 }
+
+
+
+bool Jeu::check_up()
+{
+    bool ans = false;
+    if (Cherche0()==false)
+    {
+        ans = true;
+        vector<vector<int>> fus; //Permet de collecter toutes les fusions
+        for (int i=1;i<taille;i++)
+        {
+            for (int j=0;j<taille;j++)
+            {
+                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
+                int UP = 0;
+                while (test && i-(UP+1)>=0) //test si on a rencontré une case non vide, et si on peut encore remonter d'un cran dans le tableau
+                {
+                    if (tab[i-(UP+1)][j]==tab[i][j])
+                            {
+                                if (TestFusion(i-(UP+1),j,fus)) // la fusion est possible
+                                {
+                                    UP+=1;
+                                    ans = false;
+
+                                }
+                                test = false;//On a rencontré une fusion possible, donc on sort de la boucle
+                    }
+
+                }
+            }
+        }
+
+    }
+    return ans;
+}
+
+bool Jeu::check_down()
+{
+    bool ans = false;
+    if (Cherche0()==false)
+    {
+        ans = true;
+        vector<vector<int>> fus; //Permet de collecter toutes les fusions
+        for (int i=taille-2;i>-1;i--)
+        {
+            for (int j=0;j<taille;j++)
+            {
+                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
+                int DOWN = 0;
+                while (test && i+(DOWN+1)<taille) //test si on a rencontré une case non vide, et si on peut encore descendre d'un cran dans le tableau
+                {
+                    if (tab[i+(DOWN+1)][j]==tab[i][j])
+                    {
+                        if (TestFusion(i+(DOWN+1),j,fus)) // la fusion est possible
+                        {
+                                    DOWN+=1;
+                                    ans = false;
+
+                                }
+                        test = false;//On a rencontré une fusion possible, donc on sort de la boucle
+                    }
+
+                }
+            }
+        }
+
+    }
+    return ans;
+}
+
+bool Jeu::check_left()
+{
+    bool ans = false;
+    if (Cherche0()==false)
+    {
+        ans = true;
+        vector<vector<int>> fus; //Permet de collecter toutes les fusions
+        for (int j=1;j<taille;j++)
+        {
+            for (int i=0;i<taille;i++)
+            {
+                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
+                int LEFT = 0;
+                while (test && j-(LEFT+1)>-1)
+                {
+                    if (tab[i][j-(LEFT+1)]==tab[i][j])
+                    {
+                        if (TestFusion(i,j-(LEFT+1),fus)) // la fusion est possible
+                        {
+                                    LEFT+=1;
+                                    ans = false;
+
+                                }
+                        test = false;//On a rencontré une fusion possible, donc on sort de la boucle
+                    }
+
+                }
+            }
+        }
+
+    }
+    return ans;
+}
+
+bool Jeu::check_right()
+{
+    bool ans = false;
+    if (Cherche0()==false)
+    {
+        ans = true;
+        vector<vector<int>> fus; //Permet de collecter toutes les fusions
+        for (int j=taille-2;j>-1;j--)
+        {
+            for (int i=0;i<taille;i++)
+            {
+                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
+                int RIGHT = 0;
+                while (test && j+(RIGHT+1)>-1)
+                {
+                    if (tab[i][j+(RIGHT+1)]==tab[i][j])
+                    {
+                        if (TestFusion(i,j+(RIGHT+1),fus)) // la fusion est possible
+                        {
+                                    RIGHT+=1;
+                                    ans = false;
+
+                                }
+                        test = false;//On a rencontré une fusion possible, donc on sort de la boucle
+                    }
+
+                }
+            }
+        }
+
+    }
+    return ans;
+}
+
+
 
 
 vector<vector<int>> Jeu::up()
@@ -276,7 +415,6 @@ vector<vector<int>> Jeu::up()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-            echec=true;
         }
     }
     else
@@ -287,7 +425,7 @@ vector<vector<int>> Jeu::up()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-                echec=true;
+
             }
         }
     return CHANGEMENT;
@@ -372,7 +510,7 @@ vector<vector<int>> Jeu::down()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-            echec=true;
+
         }
     }
     else
@@ -383,7 +521,7 @@ vector<vector<int>> Jeu::down()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-                echec=true;
+
             }
         }
     return CHANGEMENT;
@@ -466,7 +604,7 @@ vector<vector<int>> Jeu::left()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-            echec=true;
+
         }
     }
     else
@@ -477,7 +615,7 @@ vector<vector<int>> Jeu::left()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-                echec=true;
+
             }
         }
     return CHANGEMENT;
@@ -560,7 +698,7 @@ vector<vector<int>> Jeu::right()
         else
         {
             CHANGEMENT.push_back(vector<int>(1,0)); // la partie est finie, donc je l'indique par un 0 à la fin pour la gestion graphique
-            echec=true;
+
         }
     }
     else
@@ -571,7 +709,7 @@ vector<vector<int>> Jeu::right()
             }
             else {
                 CHANGEMENT.push_back(vector<int>(1,0)); //il ne reste plus de 0 et l'utilisateur a fait un mauvais coups, donc la partie se finit
-                echec=true;
+
             }
         }
     return CHANGEMENT;
@@ -877,7 +1015,7 @@ QString Jeu::readEnd()
         return QString("You win !");
     }
     else
-        if(echec)
+        if(GameOver())
         {
             FIN=1;
             return QString("Game Over");
@@ -902,6 +1040,14 @@ bool Jeu::Victoire()
             }
         }
     }
+    return ans;
+}
+
+bool Jeu::GameOver()
+{
+    bool ans = false;
+    if (check_up() && check_down() && check_left() && check_right())
+        ans = true;
     return ans;
 }
 
