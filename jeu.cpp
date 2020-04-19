@@ -198,144 +198,6 @@ bool Jeu::Cherche0()
 
 
 
-bool Jeu::check_up()
-{
-    bool ans = false;
-    if (Cherche0()==false)
-    {
-        ans = true;
-        vector<vector<int>> fus; //Permet de collecter toutes les fusions
-        for (int i=1;i<taille;i++)
-        {
-            for (int j=0;j<taille;j++)
-            {
-                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
-                int UP = 0;
-                while (test && i-(UP+1)>=0) //test si on a rencontré une case non vide, et si on peut encore remonter d'un cran dans le tableau
-                {
-                    if (tab[i-(UP+1)][j]==tab[i][j])
-                            {
-                                if (TestFusion(i-(UP+1),j,fus)) // la fusion est possible
-                                {
-                                    UP+=1;
-                                    ans = false;
-
-                                }
-                                test = false;//On a rencontré une fusion possible, donc on sort de la boucle
-                    }
-
-                }
-            }
-        }
-
-    }
-    return ans;
-}
-
-bool Jeu::check_down()
-{
-    bool ans = false;
-    if (Cherche0()==false)
-    {
-        ans = true;
-        vector<vector<int>> fus; //Permet de collecter toutes les fusions
-        for (int i=taille-2;i>-1;i--)
-        {
-            for (int j=0;j<taille;j++)
-            {
-                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
-                int DOWN = 0;
-                while (test && i+(DOWN+1)<taille) //test si on a rencontré une case non vide, et si on peut encore descendre d'un cran dans le tableau
-                {
-                    if (tab[i+(DOWN+1)][j]==tab[i][j])
-                    {
-                        if (TestFusion(i+(DOWN+1),j,fus)) // la fusion est possible
-                        {
-                                    DOWN+=1;
-                                    ans = false;
-
-                                }
-                        test = false;//On a rencontré une fusion possible, donc on sort de la boucle
-                    }
-
-                }
-            }
-        }
-
-    }
-    return ans;
-}
-
-bool Jeu::check_left()
-{
-    bool ans = false;
-    if (Cherche0()==false)
-    {
-        ans = true;
-        vector<vector<int>> fus; //Permet de collecter toutes les fusions
-        for (int j=1;j<taille;j++)
-        {
-            for (int i=0;i<taille;i++)
-            {
-                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
-                int LEFT = 0;
-                while (test && j-(LEFT+1)>-1)
-                {
-                    if (tab[i][j-(LEFT+1)]==tab[i][j])
-                    {
-                        if (TestFusion(i,j-(LEFT+1),fus)) // la fusion est possible
-                        {
-                                    LEFT+=1;
-                                    ans = false;
-
-                                }
-                        test = false;//On a rencontré une fusion possible, donc on sort de la boucle
-                    }
-
-                }
-            }
-        }
-
-    }
-    return ans;
-}
-
-bool Jeu::check_right()
-{
-    bool ans = false;
-    if (Cherche0()==false)
-    {
-        ans = true;
-        vector<vector<int>> fus; //Permet de collecter toutes les fusions
-        for (int j=taille-2;j>-1;j--)
-        {
-            for (int i=0;i<taille;i++)
-            {
-                bool test = true; // Booléen permettant de savoir si on a rencontré une case pleine au-dessus ou non, dès que c'est le cas, la boucle while s'arrête
-                int RIGHT = 0;
-                while (test && j+(RIGHT+1)>-1)
-                {
-                    if (tab[i][j+(RIGHT+1)]==tab[i][j])
-                    {
-                        if (TestFusion(i,j+(RIGHT+1),fus)) // la fusion est possible
-                        {
-                                    RIGHT+=1;
-                                    ans = false;
-
-                                }
-                        test = false;//On a rencontré une fusion possible, donc on sort de la boucle
-                    }
-
-                }
-            }
-        }
-
-    }
-    return ans;
-}
-
-
-
 
 vector<vector<int>> Jeu::up()
 {
@@ -1046,8 +908,28 @@ bool Jeu::Victoire()
 bool Jeu::GameOver()
 {
     bool ans = false;
-    if (check_up() && check_down() && check_left() && check_right())
+    if (Cherche0()==false)
+    {
         ans = true;
+        for (int i=1;i<taille;i++)
+        {
+            for (int j=0;j<taille;j++)
+            {
+                if (j<taille-1)
+                    if(tab[i][j]==tab[i][j+1])
+                        ans=false;
+                if (j>0)
+                    if(tab[i][j]==tab[i][j-1])
+                        ans=false;
+                if (i<taille-1)
+                    if(tab[i][j]==tab[i+1][j])
+                        ans=false;
+                if(i>0)
+                    if(tab[i][j]==tab[i-1][j])
+                        ans=false;
+           }
+        }
+    }
     return ans;
 }
 
