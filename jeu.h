@@ -67,13 +67,13 @@ public:
     Q_INVOKABLE void cancel();
     Q_INVOKABLE void add_historique();
     Q_INVOKABLE void stocker();
+    Q_INVOKABLE void reconstruire();
 
     void Init();
     vector<vector<int>> up();
     vector<vector<int>> down();
     vector<vector<int>> left();
     vector<vector<int>> right();
-    int Reconstruire();
     void StockerScore();
     void DestockerScore();
     void RemiseZeroSauvegardes();
