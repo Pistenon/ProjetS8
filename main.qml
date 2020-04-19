@@ -1581,7 +1581,7 @@ Window {
                     break;
                 case "You win !":
                     ecranFin.visible = true
-                    texteFin.color="#f8f6f1"
+                    texteFin.color="#796e63"
                     ecranFin.color="#f9f9b0"
                     break;
                 case "Game Over":
@@ -1691,7 +1691,7 @@ Window {
         }
 
         Rectangle {
-            id: rectangle2
+            id: retourArriere
             x: 251
             y: 18
             width: 189
